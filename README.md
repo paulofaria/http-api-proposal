@@ -59,7 +59,7 @@ var enjoysScubaDiving = true
 
 Same reasoning as `HTTP.Request.Method` nested inside `HTTP.Request`. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside `HTTP.Request` also helps disambiguating from other possible `Status` types.
 
-#### Deadlines instead of timeouts.
+#### `Deadline` instead of timeouts.
 
 Deadlines are easier to deal with. There's no need for intermediate calculations when providing the value for separate calls.
 

@@ -207,7 +207,7 @@ var enjoysScubaDiving = true
 <h4 id='code-http-response-status-code-nested-in-code-http-response-code' class='heading'><code>HTTP.Response.Status</code> nested in <code>HTTP.Response</code></h4>
 
 <p>Same reasoning as <code>HTTP.Request.Method</code> nested inside <code>HTTP.Request</code>. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside <code>HTTP.Request</code> also helps disambiguating from other possible <code>Status</code> types.</p>
-<h4 id='deadlines-instead-of-timeouts' class='heading'>Deadlines instead of timeouts.</h4>
+<h4 id='code-deadline-code-instead-of-timeouts' class='heading'><code>Deadline</code> instead of timeouts.</h4>
 
 <p>Deadlines are easier to deal with. There&rsquo;s no need for intermediate calculations when providing the value for separate calls.</p>
 <h4 id='use-code-async-code-as-a-prefix-for-assynchronous-based-types' class='heading'>Use <code>Async</code> as a prefix for assynchronous based types.</h4>
