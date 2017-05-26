@@ -4,6 +4,11 @@
 <dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>OBJ_13</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>OBJ_15</key>
 		<dict>
 			<key>primary</key>

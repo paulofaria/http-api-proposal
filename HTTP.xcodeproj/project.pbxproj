@@ -16,71 +16,55 @@
             "en",
          );
          mainGroup = OBJ_5;
-         productRefGroup = OBJ_12;
+         productRefGroup = OBJ_11;
          projectDirPath = ".";
          targets = (
-            OBJ_15,
-            OBJ_22,
+            OBJ_13,
          );
       };
       OBJ_10 = {
-         isa = "PBXGroup";
-         children = (
-            OBJ_11,
-         );
-         name = "http-proposalTests";
-         path = "Tests/http-proposalTests";
+         isa = "PBXFileReference";
+         path = "docs";
          sourceTree = "SOURCE_ROOT";
       };
       OBJ_11 = {
-         isa = "PBXFileReference";
-         path = "http_proposalTests.swift";
-         sourceTree = "<group>";
-      };
-      OBJ_12 = {
          isa = "PBXGroup";
          children = (
-            OBJ_13,
-            OBJ_14,
+            OBJ_12,
          );
          name = "Products";
          path = "";
          sourceTree = "BUILT_PRODUCTS_DIR";
       };
-      OBJ_13 = {
+      OBJ_12 = {
          isa = "PBXFileReference";
          path = "HTTP.framework";
          sourceTree = "BUILT_PRODUCTS_DIR";
       };
-      OBJ_14 = {
-         isa = "PBXFileReference";
-         path = "http_proposalTests.xctest";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      OBJ_15 = {
+      OBJ_13 = {
          isa = "PBXNativeTarget";
-         buildConfigurationList = OBJ_16;
+         buildConfigurationList = OBJ_14;
          buildPhases = (
+            OBJ_17,
             OBJ_19,
-            OBJ_21,
          );
          dependencies = (
          );
          name = "HTTP";
          productName = "HTTP";
-         productReference = OBJ_13;
+         productReference = OBJ_12;
          productType = "com.apple.product-type.framework";
       };
-      OBJ_16 = {
+      OBJ_14 = {
          isa = "XCConfigurationList";
          buildConfigurations = (
-            OBJ_17,
-            OBJ_18,
+            OBJ_15,
+            OBJ_16,
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Debug";
       };
-      OBJ_17 = {
+      OBJ_15 = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             ENABLE_TESTABILITY = "YES";
@@ -109,7 +93,7 @@
          };
          name = "Debug";
       };
-      OBJ_18 = {
+      OBJ_16 = {
          isa = "XCBuildConfiguration";
          buildSettings = {
             ENABLE_TESTABILITY = "YES";
@@ -138,10 +122,19 @@
          };
          name = "Release";
       };
-      OBJ_19 = {
+      OBJ_17 = {
          isa = "PBXSourcesBuildPhase";
          files = (
-            OBJ_20,
+            OBJ_18,
+         );
+      };
+      OBJ_18 = {
+         isa = "PBXBuildFile";
+         fileRef = OBJ_8;
+      };
+      OBJ_19 = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
          );
       };
       OBJ_2 = {
@@ -152,105 +145,6 @@
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Debug";
-      };
-      OBJ_20 = {
-         isa = "PBXBuildFile";
-         fileRef = OBJ_8;
-      };
-      OBJ_21 = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
-      };
-      OBJ_22 = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = OBJ_23;
-         buildPhases = (
-            OBJ_26,
-            OBJ_28,
-         );
-         dependencies = (
-         );
-         name = "http-proposalTests";
-         productName = "http_proposalTests";
-         productReference = OBJ_14;
-         productType = "com.apple.product-type.bundle.unit-test";
-      };
-      OBJ_23 = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            OBJ_24,
-            OBJ_25,
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Debug";
-      };
-      OBJ_24 = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)",
-            );
-            INFOPLIST_FILE = "HTTP.xcodeproj/http_proposalTests_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks",
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)",
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-            );
-            TARGET_NAME = "http-proposalTests";
-         };
-         name = "Debug";
-      };
-      OBJ_25 = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)",
-            );
-            INFOPLIST_FILE = "HTTP.xcodeproj/http_proposalTests_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks",
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)",
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-            );
-            TARGET_NAME = "http-proposalTests";
-         };
-         name = "Release";
-      };
-      OBJ_26 = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            OBJ_27,
-         );
-      };
-      OBJ_27 = {
-         isa = "PBXBuildFile";
-         fileRef = OBJ_11;
-      };
-      OBJ_28 = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
       };
       OBJ_3 = {
          isa = "XCBuildConfiguration";
@@ -322,7 +216,8 @@
             OBJ_6,
             OBJ_7,
             OBJ_9,
-            OBJ_12,
+            OBJ_10,
+            OBJ_11,
          );
          path = "";
          sourceTree = "<group>";
@@ -350,7 +245,6 @@
       OBJ_9 = {
          isa = "PBXGroup";
          children = (
-            OBJ_10,
          );
          name = "Tests";
          path = "";
