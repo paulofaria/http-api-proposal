@@ -212,7 +212,7 @@ var enjoysScubaDiving = true
 <p>Deadlines are easier to deal with. There&rsquo;s no need for intermediate calculations when providing the value for separate calls.</p>
 <h4 id='use-code-async-code-as-a-prefix-for-assynchronous-based-types' class='heading'>Use <code>Async</code> as a prefix for assynchronous based types.</h4>
 
-<p>Most common APIs are synchronous. Asynchronous APIs are the exception in general. Prefixing all synchronous APIs with <code>Sync</code> would be insane.</p>
+<p>Most common APIs are synchronous. Asynchronous APIs are the exception in general. Prefixing all synchronous APIs with <code>Sync</code> would be impractical.</p>
 <h4 id='use-code-unsafemutablerawbufferpointer-code-and-code-unsaferawbufferpointer-code-instead-of-code-foundation-data-code' class='heading'>Use <code>UnsafeMutableRawBufferPointer</code> and <code>UnsafeRawBufferPointer</code> instead of <code>Foundation.Data</code></h4>
 
 <p>Using buffer pointers is more performant and depends solely on the standard library. Buffer pointers are also better suited for C APIs interfacing. The current proposal doesn&rsquo;t depend on <code>Foundation</code> at all, but it&rsquo;s possible to provide extensions for the APIs that take buffer pointers converting to and from <code>Foundation.Data</code>.</p>
