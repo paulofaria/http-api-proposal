@@ -56,3 +56,7 @@ custom_categories:
     children:
     - Body
     - AsyncBody
+
+  - name: Error Handling
+    children:
+    - AnyError 
