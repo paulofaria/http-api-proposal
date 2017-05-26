@@ -65,7 +65,7 @@ Deadlines are easier to deal with. There's no need for intermediate calculations
 
 #### Use `Async` as a prefix for assynchronous based types.
 
-Most common APIs are synchronous. Asynchronous APIs are the exception in general. Prefixing all synchronous APIs with `Sync` would be insane.
+Most common APIs are synchronous. Asynchronous APIs are the exception in general. Prefixing all synchronous APIs with `Sync` would be impractical.
 
 #### Use `UnsafeMutableRawBufferPointer` and `UnsafeRawBufferPointer` instead of `Foundation.Data`
 
