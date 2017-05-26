@@ -57,7 +57,7 @@ var enjoysScubaDiving = true
 
 #### `HTTP.Response.Status` nested in `HTTP.Response`
 
-Same reasoning as `HTTP.Request.Method` nested inside `HTTP.Request`. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside `HTTP.Request` also helps disambiguating from other possible `Status` types.
+Same reasoning as `HTTP.Request.Method` nested inside `HTTP.Request`. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside `HTTP.Response` also helps disambiguating from other possible `Status` types.
 
 #### `Deadline` instead of timeouts.
 
