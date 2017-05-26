@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Status Enum Reference</title>
+    <title>Status Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/Status" class="dashAnchor"></a>
-    <a title="Status Enum Reference"></a>
+    <a name="//apple_ref/swift/Struct/Status" class="dashAnchor"></a>
+    <a title="Status Struct Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../../index.html">HTTP Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html">HTTP Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        Status Enum Reference
+        Status Struct Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -160,7 +160,7 @@
             <h1>Status</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Status</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Status</span></code></pre>
 
                 </div>
               </div>
@@ -173,9 +173,90 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status8continueFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/continue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status8continueFMS1_S1_">continue</a>
+                    <a name="/s:vVV4HTTP8Response6Status10statusCodeSi"></a>
+                    <a name="//apple_ref/swift/Property/statusCode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVV4HTTP8Response6Status10statusCodeSi">statusCode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>HTTP status code.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">statusCode</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vVV4HTTP8Response6Status12reasonPhraseSS"></a>
+                    <a name="//apple_ref/swift/Property/reasonPhrase" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vVV4HTTP8Response6Status12reasonPhraseSS">reasonPhrase</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>HTTP reason phrase.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FVV4HTTP8Response6StatuscFT10statusCodeSi12reasonPhraseSS_S1_"></a>
+                    <a name="//apple_ref/swift/Method/init(statusCode:reasonPhrase:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FVV4HTTP8Response6StatuscFT10statusCodeSi12reasonPhraseSS_S1_">init(statusCode:reasonPhrase:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an HTTP status code.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvVV4HTTP8Response6Status8continueS1_"></a>
+                    <a name="//apple_ref/swift/Variable/continue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status8continueS1_">continue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -190,23 +271,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="err">`</span><span class="k">continue</span><span class="err">`</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">var</span> <span class="err">`</span><span class="k">continue</span><span class="err">`</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Continue"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status18switchingProtocolsFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/switchingProtocols" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status18switchingProtocolsFMS1_S1_">switchingProtocols</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status18switchingProtocolsS1_"></a>
+                    <a name="//apple_ref/swift/Variable/switchingProtocols" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status18switchingProtocolsS1_">switchingProtocols</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -221,23 +298,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">switchingProtocols</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">switchingProtocols</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">101</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Switching Protocols"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status10processingFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/processing" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status10processingFMS1_S1_">processing</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status10processingS1_"></a>
+                    <a name="//apple_ref/swift/Variable/processing" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status10processingS1_">processing</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -252,23 +325,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">processing</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">processing</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">102</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Processing"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status2okFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/ok" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status2okFMS1_S1_">ok</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status2okS1_"></a>
+                    <a name="//apple_ref/swift/Variable/ok" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status2okS1_">ok</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -283,23 +352,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">ok</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">ok</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"OK"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status7createdFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/created" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status7createdFMS1_S1_">created</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status7createdS1_"></a>
+                    <a name="//apple_ref/swift/Variable/created" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status7createdS1_">created</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -314,23 +379,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">created</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">created</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">201</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Created"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status8acceptedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/accepted" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status8acceptedFMS1_S1_">accepted</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status8acceptedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/accepted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status8acceptedS1_">accepted</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -345,23 +406,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">accepted</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">accepted</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">202</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Accepted"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status27nonAuthoritativeInformationFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/nonAuthoritativeInformation" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status27nonAuthoritativeInformationFMS1_S1_">nonAuthoritativeInformation</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status27nonAuthoritativeInformationS1_"></a>
+                    <a name="//apple_ref/swift/Variable/nonAuthoritativeInformation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status27nonAuthoritativeInformationS1_">nonAuthoritativeInformation</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -376,23 +433,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">nonAuthoritativeInformation</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">nonAuthoritativeInformation</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">203</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Non Authoritative Information"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status9noContentFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/noContent" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status9noContentFMS1_S1_">noContent</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status9noContentS1_"></a>
+                    <a name="//apple_ref/swift/Variable/noContent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status9noContentS1_">noContent</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -407,23 +460,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">noContent</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">noContent</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">204</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"No Content"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status12resetContentFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/resetContent" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status12resetContentFMS1_S1_">resetContent</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status12resetContentS1_"></a>
+                    <a name="//apple_ref/swift/Variable/resetContent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status12resetContentS1_">resetContent</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -438,23 +487,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">resetContent</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">resetContent</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">205</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Reset Content"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status14partialContentFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/partialContent" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status14partialContentFMS1_S1_">partialContent</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status14partialContentS1_"></a>
+                    <a name="//apple_ref/swift/Variable/partialContent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status14partialContentS1_">partialContent</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -469,23 +514,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">partialContent</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">partialContent</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">206</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Partial Content"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status15multipleChoicesFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/multipleChoices" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status15multipleChoicesFMS1_S1_">multipleChoices</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status15multipleChoicesS1_"></a>
+                    <a name="//apple_ref/swift/Variable/multipleChoices" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status15multipleChoicesS1_">multipleChoices</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -500,23 +541,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">multipleChoices</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">multipleChoices</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Multiple Choices"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status16movedPermanentlyFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/movedPermanently" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status16movedPermanentlyFMS1_S1_">movedPermanently</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status16movedPermanentlyS1_"></a>
+                    <a name="//apple_ref/swift/Variable/movedPermanently" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status16movedPermanentlyS1_">movedPermanently</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -531,23 +568,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">movedPermanently</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">movedPermanently</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">301</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Moved Permanently"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status5foundFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/found" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status5foundFMS1_S1_">found</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status5foundS1_"></a>
+                    <a name="//apple_ref/swift/Variable/found" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status5foundS1_">found</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -562,23 +595,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">found</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">found</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">302</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Found"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status8seeOtherFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/seeOther" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status8seeOtherFMS1_S1_">seeOther</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status8seeOtherS1_"></a>
+                    <a name="//apple_ref/swift/Variable/seeOther" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status8seeOtherS1_">seeOther</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -593,23 +622,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">seeOther</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">seeOther</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">303</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"See Other"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status11notModifiedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/notModified" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status11notModifiedFMS1_S1_">notModified</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status11notModifiedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/notModified" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status11notModifiedS1_">notModified</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -624,23 +649,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">notModified</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">notModified</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">304</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Not Modified"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status8useProxyFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/useProxy" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status8useProxyFMS1_S1_">useProxy</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status8useProxyS1_"></a>
+                    <a name="//apple_ref/swift/Variable/useProxy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status8useProxyS1_">useProxy</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -655,23 +676,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">useProxy</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">useProxy</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">305</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Use Proxy"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status11switchProxyFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/switchProxy" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status11switchProxyFMS1_S1_">switchProxy</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status11switchProxyS1_"></a>
+                    <a name="//apple_ref/swift/Variable/switchProxy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status11switchProxyS1_">switchProxy</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -686,23 +703,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">switchProxy</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">switchProxy</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">306</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Switch Proxy"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status17temporaryRedirectFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/temporaryRedirect" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status17temporaryRedirectFMS1_S1_">temporaryRedirect</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status17temporaryRedirectS1_"></a>
+                    <a name="//apple_ref/swift/Variable/temporaryRedirect" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status17temporaryRedirectS1_">temporaryRedirect</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -717,23 +730,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">temporaryRedirect</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">temporaryRedirect</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">307</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Temporary Redirect"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status17permanentRedirectFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/permanentRedirect" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status17permanentRedirectFMS1_S1_">permanentRedirect</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status17permanentRedirectS1_"></a>
+                    <a name="//apple_ref/swift/Variable/permanentRedirect" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status17permanentRedirectS1_">permanentRedirect</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -748,23 +757,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">permanentRedirect</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">permanentRedirect</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">308</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Permanent Redirect"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status10badRequestFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/badRequest" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status10badRequestFMS1_S1_">badRequest</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status10badRequestS1_"></a>
+                    <a name="//apple_ref/swift/Variable/badRequest" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status10badRequestS1_">badRequest</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -779,23 +784,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">badRequest</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">badRequest</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Bad Request"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status12unauthorizedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/unauthorized" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status12unauthorizedFMS1_S1_">unauthorized</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status12unauthorizedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/unauthorized" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status12unauthorizedS1_">unauthorized</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -810,23 +811,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">unauthorized</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">unauthorized</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">401</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Unauthorized"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status15paymentRequiredFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/paymentRequired" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status15paymentRequiredFMS1_S1_">paymentRequired</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status15paymentRequiredS1_"></a>
+                    <a name="//apple_ref/swift/Variable/paymentRequired" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status15paymentRequiredS1_">paymentRequired</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -841,23 +838,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">paymentRequired</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">paymentRequired</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">402</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Payment Required"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status9forbiddenFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/forbidden" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status9forbiddenFMS1_S1_">forbidden</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status9forbiddenS1_"></a>
+                    <a name="//apple_ref/swift/Variable/forbidden" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status9forbiddenS1_">forbidden</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -872,23 +865,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">forbidden</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">forbidden</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">403</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Forbidden"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status8notFoundFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/notFound" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status8notFoundFMS1_S1_">notFound</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status8notFoundS1_"></a>
+                    <a name="//apple_ref/swift/Variable/notFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status8notFoundS1_">notFound</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -903,23 +892,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">notFound</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">notFound</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">404</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Not Found"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status16methodNotAllowedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/methodNotAllowed" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status16methodNotAllowedFMS1_S1_">methodNotAllowed</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status16methodNotAllowedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/methodNotAllowed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status16methodNotAllowedS1_">methodNotAllowed</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -934,23 +919,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">methodNotAllowed</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">methodNotAllowed</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">405</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Method Not Allowed"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status13notAcceptableFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/notAcceptable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status13notAcceptableFMS1_S1_">notAcceptable</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status13notAcceptableS1_"></a>
+                    <a name="//apple_ref/swift/Variable/notAcceptable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status13notAcceptableS1_">notAcceptable</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -965,23 +946,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">notAcceptable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">notAcceptable</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">406</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Not Acceptable"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status27proxyAuthenticationRequiredFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/proxyAuthenticationRequired" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status27proxyAuthenticationRequiredFMS1_S1_">proxyAuthenticationRequired</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status27proxyAuthenticationRequiredS1_"></a>
+                    <a name="//apple_ref/swift/Variable/proxyAuthenticationRequired" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status27proxyAuthenticationRequiredS1_">proxyAuthenticationRequired</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -996,23 +973,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">proxyAuthenticationRequired</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">proxyAuthenticationRequired</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">407</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Proxy Authentication Required"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status14requestTimeoutFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/requestTimeout" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status14requestTimeoutFMS1_S1_">requestTimeout</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status14requestTimeoutS1_"></a>
+                    <a name="//apple_ref/swift/Variable/requestTimeout" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status14requestTimeoutS1_">requestTimeout</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1027,23 +1000,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">requestTimeout</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">requestTimeout</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">408</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Request Timeout"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status8conflictFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/conflict" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status8conflictFMS1_S1_">conflict</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status8conflictS1_"></a>
+                    <a name="//apple_ref/swift/Variable/conflict" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status8conflictS1_">conflict</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1058,23 +1027,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">conflict</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">conflict</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">409</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Conflict"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status4goneFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/gone" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status4goneFMS1_S1_">gone</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status4goneS1_"></a>
+                    <a name="//apple_ref/swift/Variable/gone" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status4goneS1_">gone</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1089,23 +1054,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">gone</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">gone</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">410</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Gone"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status14lengthRequiredFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/lengthRequired" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status14lengthRequiredFMS1_S1_">lengthRequired</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status14lengthRequiredS1_"></a>
+                    <a name="//apple_ref/swift/Variable/lengthRequired" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status14lengthRequiredS1_">lengthRequired</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1120,23 +1081,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">lengthRequired</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">lengthRequired</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">411</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Length Required"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status18preconditionFailedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/preconditionFailed" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status18preconditionFailedFMS1_S1_">preconditionFailed</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status18preconditionFailedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/preconditionFailed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status18preconditionFailedS1_">preconditionFailed</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1151,23 +1108,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">preconditionFailed</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">preconditionFailed</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">412</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Precondition Failed"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status21requestEntityTooLargeFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/requestEntityTooLarge" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status21requestEntityTooLargeFMS1_S1_">requestEntityTooLarge</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status21requestEntityTooLargeS1_"></a>
+                    <a name="//apple_ref/swift/Variable/requestEntityTooLarge" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status21requestEntityTooLargeS1_">requestEntityTooLarge</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1182,23 +1135,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">requestEntityTooLarge</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">requestEntityTooLarge</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">413</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Request Entity Too Large"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status17requestURITooLongFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/requestURITooLong" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status17requestURITooLongFMS1_S1_">requestURITooLong</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status17requestURITooLongS1_"></a>
+                    <a name="//apple_ref/swift/Variable/requestURITooLong" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status17requestURITooLongS1_">requestURITooLong</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1213,23 +1162,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">requestURITooLong</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">requestURITooLong</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">414</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Request URI Too Long"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status20unsupportedMediaTypeFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/unsupportedMediaType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status20unsupportedMediaTypeFMS1_S1_">unsupportedMediaType</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status20unsupportedMediaTypeS1_"></a>
+                    <a name="//apple_ref/swift/Variable/unsupportedMediaType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status20unsupportedMediaTypeS1_">unsupportedMediaType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1244,23 +1189,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">unsupportedMediaType</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">unsupportedMediaType</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">415</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Unsupported Media Type"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status28requestedRangeNotSatisfiableFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/requestedRangeNotSatisfiable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status28requestedRangeNotSatisfiableFMS1_S1_">requestedRangeNotSatisfiable</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status28requestedRangeNotSatisfiableS1_"></a>
+                    <a name="//apple_ref/swift/Variable/requestedRangeNotSatisfiable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status28requestedRangeNotSatisfiableS1_">requestedRangeNotSatisfiable</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1275,23 +1216,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">requestedRangeNotSatisfiable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">requestedRangeNotSatisfiable</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">416</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Request Range Not Satisfiable"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status17expectationFailedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/expectationFailed" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status17expectationFailedFMS1_S1_">expectationFailed</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status17expectationFailedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/expectationFailed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status17expectationFailedS1_">expectationFailed</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1306,23 +1243,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">expectationFailed</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">expectationFailed</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">417</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Expectation Failed"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status9imATeapotFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/imATeapot" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status9imATeapotFMS1_S1_">imATeapot</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status9imATeapotS1_"></a>
+                    <a name="//apple_ref/swift/Variable/imATeapot" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status9imATeapotS1_">imATeapot</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1337,23 +1270,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">imATeapot</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">imATeapot</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">418</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"I'm A Teapot"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status21authenticationTimeoutFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/authenticationTimeout" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status21authenticationTimeoutFMS1_S1_">authenticationTimeout</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status21authenticationTimeoutS1_"></a>
+                    <a name="//apple_ref/swift/Variable/authenticationTimeout" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status21authenticationTimeoutS1_">authenticationTimeout</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1368,23 +1297,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">authenticationTimeout</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">authenticationTimeout</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">419</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Authentication Timeout"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status15enhanceYourCalmFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/enhanceYourCalm" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status15enhanceYourCalmFMS1_S1_">enhanceYourCalm</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status15enhanceYourCalmS1_"></a>
+                    <a name="//apple_ref/swift/Variable/enhanceYourCalm" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status15enhanceYourCalmS1_">enhanceYourCalm</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1399,23 +1324,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">enhanceYourCalm</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">enhanceYourCalm</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">420</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Enhance Your Calm"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status19unprocessableEntityFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/unprocessableEntity" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status19unprocessableEntityFMS1_S1_">unprocessableEntity</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status19unprocessableEntityS1_"></a>
+                    <a name="//apple_ref/swift/Variable/unprocessableEntity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status19unprocessableEntityS1_">unprocessableEntity</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1430,23 +1351,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">unprocessableEntity</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">unprocessableEntity</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">422</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Unprocessable Entity"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status6lockedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/locked" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status6lockedFMS1_S1_">locked</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status6lockedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/locked" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status6lockedS1_">locked</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1461,23 +1378,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">locked</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">locked</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">423</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Locked"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status16failedDependencyFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/failedDependency" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status16failedDependencyFMS1_S1_">failedDependency</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status16failedDependencyS1_"></a>
+                    <a name="//apple_ref/swift/Variable/failedDependency" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status16failedDependencyS1_">failedDependency</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1492,23 +1405,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">failedDependency</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">failedDependency</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">424</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Failed Dependency"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status20preconditionRequiredFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/preconditionRequired" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status20preconditionRequiredFMS1_S1_">preconditionRequired</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status20preconditionRequiredS1_"></a>
+                    <a name="//apple_ref/swift/Variable/preconditionRequired" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status20preconditionRequiredS1_">preconditionRequired</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1523,23 +1432,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">preconditionRequired</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">preconditionRequired</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">428</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Precondition Required"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status15tooManyRequestsFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/tooManyRequests" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status15tooManyRequestsFMS1_S1_">tooManyRequests</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status15tooManyRequestsS1_"></a>
+                    <a name="//apple_ref/swift/Variable/tooManyRequests" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status15tooManyRequestsS1_">tooManyRequests</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1554,23 +1459,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">tooManyRequests</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">tooManyRequests</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">429</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Too Many Requests"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status27requestHeaderFieldsTooLargeFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/requestHeaderFieldsTooLarge" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status27requestHeaderFieldsTooLargeFMS1_S1_">requestHeaderFieldsTooLarge</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status27requestHeaderFieldsTooLargeS1_"></a>
+                    <a name="//apple_ref/swift/Variable/requestHeaderFieldsTooLarge" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status27requestHeaderFieldsTooLargeS1_">requestHeaderFieldsTooLarge</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1585,23 +1486,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">requestHeaderFieldsTooLarge</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">requestHeaderFieldsTooLarge</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">431</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Request Header Fields Too Large"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status19internalServerErrorFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/internalServerError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status19internalServerErrorFMS1_S1_">internalServerError</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status19internalServerErrorS1_"></a>
+                    <a name="//apple_ref/swift/Variable/internalServerError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status19internalServerErrorS1_">internalServerError</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1616,23 +1513,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">internalServerError</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">internalServerError</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Internal Server Error"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status14notImplementedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/notImplemented" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status14notImplementedFMS1_S1_">notImplemented</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status14notImplementedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/notImplemented" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status14notImplementedS1_">notImplemented</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1647,23 +1540,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">notImplemented</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">notImplemented</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">501</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Not Implemented"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status10badGatewayFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/badGateway" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status10badGatewayFMS1_S1_">badGateway</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status10badGatewayS1_"></a>
+                    <a name="//apple_ref/swift/Variable/badGateway" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status10badGatewayS1_">badGateway</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1678,23 +1567,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">badGateway</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">badGateway</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">502</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Bad Gateway"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status18serviceUnavailableFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/serviceUnavailable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status18serviceUnavailableFMS1_S1_">serviceUnavailable</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status18serviceUnavailableS1_"></a>
+                    <a name="//apple_ref/swift/Variable/serviceUnavailable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status18serviceUnavailableS1_">serviceUnavailable</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1709,23 +1594,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">serviceUnavailable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">serviceUnavailable</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">503</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Service Unavailable"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status14gatewayTimeoutFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/gatewayTimeout" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status14gatewayTimeoutFMS1_S1_">gatewayTimeout</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status14gatewayTimeoutS1_"></a>
+                    <a name="//apple_ref/swift/Variable/gatewayTimeout" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status14gatewayTimeoutS1_">gatewayTimeout</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1740,23 +1621,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">gatewayTimeout</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">gatewayTimeout</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">504</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Gateway Timeout"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status23httpVersionNotSupportedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/httpVersionNotSupported" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status23httpVersionNotSupportedFMS1_S1_">httpVersionNotSupported</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status23httpVersionNotSupportedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/httpVersionNotSupported" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status23httpVersionNotSupportedS1_">httpVersionNotSupported</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1771,23 +1648,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">httpVersionNotSupported</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">httpVersionNotSupported</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">505</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"HTTP Version Not Supported"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status21variantAlsoNegotiatesFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/variantAlsoNegotiates" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status21variantAlsoNegotiatesFMS1_S1_">variantAlsoNegotiates</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status21variantAlsoNegotiatesS1_"></a>
+                    <a name="//apple_ref/swift/Variable/variantAlsoNegotiates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status21variantAlsoNegotiatesS1_">variantAlsoNegotiates</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1802,23 +1675,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">variantAlsoNegotiates</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">variantAlsoNegotiates</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">506</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Variant Also Negotiates"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status19insufficientStorageFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/insufficientStorage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status19insufficientStorageFMS1_S1_">insufficientStorage</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status19insufficientStorageS1_"></a>
+                    <a name="//apple_ref/swift/Variable/insufficientStorage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status19insufficientStorageS1_">insufficientStorage</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1833,23 +1702,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">insufficientStorage</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">insufficientStorage</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">507</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Insufficient Storage"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status12loopDetectedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/loopDetected" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status12loopDetectedFMS1_S1_">loopDetected</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status12loopDetectedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/loopDetected" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status12loopDetectedS1_">loopDetected</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1864,23 +1729,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">loopDetected</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">loopDetected</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">508</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Loop Detected"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status11notExtendedFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/notExtended" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status11notExtendedFMS1_S1_">notExtended</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status11notExtendedS1_"></a>
+                    <a name="//apple_ref/swift/Variable/notExtended" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status11notExtendedS1_">notExtended</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1895,23 +1756,19 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">notExtended</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">notExtended</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">510</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Not Extended"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FOV4HTTP8Response6Status29networkAuthenticationRequiredFMS1_S1_"></a>
-                    <a name="//apple_ref/swift/Element/networkAuthenticationRequired" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status29networkAuthenticationRequiredFMS1_S1_">networkAuthenticationRequired</a>
+                    <a name="/s:ZvVV4HTTP8Response6Status29networkAuthenticationRequiredS1_"></a>
+                    <a name="//apple_ref/swift/Variable/networkAuthenticationRequired" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvVV4HTTP8Response6Status29networkAuthenticationRequiredS1_">networkAuthenticationRequired</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1926,38 +1783,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="n">networkAuthenticationRequired</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FOV4HTTP8Response6Status5otherFMS1_FT10statusCodeSi12reasonPhraseSS_S1_"></a>
-                    <a name="//apple_ref/swift/Element/other" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FOV4HTTP8Response6Status5otherFMS1_FT10statusCodeSi12reasonPhraseSS_S1_">other</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Other status code.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">other</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">networkAuthenticationRequired</span> <span class="o">=</span> <span class="kt">Status</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="mi">511</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"Network Authentication Required"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>

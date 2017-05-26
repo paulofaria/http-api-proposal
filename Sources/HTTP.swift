@@ -272,64 +272,40 @@ public struct Request : Message {
     }
     
     /// HTTP method.
-    public enum Method {
-        /// GET method.
-        case get
-        /// HEAD method.
-        case head
-        /// POST method.
-        case post
-        /// PUT method.
-        case put
-        /// PATCH method.
-        case patch
-        /// DELETE method.
-        case delete
-        /// OPTIONS method.
-        case options
-        /// TRACE method.
-        case trace
-        /// CONNECT method.
-        case connect
-        /// Other method.
-        case other(String)
-    }
-}
-
-extension Request.Method {
-    /// :nodoc:
-    init(_ method: String) {
-        let method = method.uppercased()
-        switch method {
-        case "DELETE":  self = .delete
-        case "GET":     self = .get
-        case "HEAD":    self = .head
-        case "POST":    self = .post
-        case "PUT":     self = .put
-        case "CONNECT": self = .connect
-        case "OPTIONS": self = .options
-        case "TRACE":   self = .trace
-        case "PATCH":   self = .patch
-        default:        self = .other(method)
+    public struct Method {
+        /// HTTP method
+        public let method: String
+        
+        /// Creates an HTTP method.
+        init(_ method: String) {
+            self.method = method.uppercased()
         }
+        
+        /// GET method.
+        public static var get = Method("GET")
+        /// HEAD method.
+        public static var head = Method("HEAD")
+        /// POST method.
+        public static var post = Method("POST")
+        /// PUT method.
+        public static var put = Method("PUT")
+        /// PATCH method.
+        public static var patch = Method("PATCH")
+        /// DELETE method.
+        public static var delete = Method("DELETE")
+        /// OPTIONS method.
+        public static var options = Method("OPTIONS")
+        /// TRACE method.
+        public static var trace = Method("TRACE")
+        /// CONNECT method.
+        public static var connect = Method("CONNECT")
     }
 }
 
 extension Request.Method : Hashable {
     /// :nodoc:
     public var hashValue: Int {
-        switch self {
-        case .delete:            return 0
-        case .get:               return 1
-        case .head:              return 2
-        case .post:              return 3
-        case .put:               return 4
-        case .connect:           return 5
-        case .options:           return 6
-        case .trace:             return 7
-        case .patch:             return 8
-        case .other(let method): return 9 + method.hashValue
-        }
+        return method.hashValue
     }
     
     /// :nodoc:
@@ -341,18 +317,7 @@ extension Request.Method : Hashable {
 extension Request.Method : CustomStringConvertible {
     /// :nodoc:
     public var description: String {
-        switch self {
-        case .delete:            return "DELETE"
-        case .get:               return "GET"
-        case .head:              return "HEAD"
-        case .post:              return "POST"
-        case .put:               return "PUT"
-        case .connect:           return "CONNECT"
-        case .options:           return "OPTIONS"
-        case .trace:             return "TRACE"
-        case .patch:             return "PATCH"
-        case .other(let method): return method.uppercased()
-        }
+        return method
     }
 }
 
@@ -381,127 +346,136 @@ public struct Response : Message {
     }
     
     /// HTTP status.
-    public enum Status {
+    public struct Status {
+        /// HTTP status code.
+        public let statusCode: Int
+        /// HTTP reason phrase.
+        public let reasonPhrase: String
+        
+        /// Creates an HTTP status code.
+        public init(statusCode: Int, reasonPhrase: String) {
+            self.statusCode = statusCode
+            self.reasonPhrase = reasonPhrase
+        }
+        
         /// Continue.
-        case `continue`
+        public static var `continue` = Status(statusCode: 100, reasonPhrase: "Continue")
         /// Switching Protocols.
-        case switchingProtocols
+        public static var switchingProtocols = Status(statusCode: 101, reasonPhrase: "Switching Protocols")
         /// Processing.
-        case processing
+        public static var processing = Status(statusCode: 102, reasonPhrase: "Processing")
         
         /// OK.
-        case ok
+        public static var ok = Status(statusCode: 200, reasonPhrase: "OK")
         /// Created.
-        case created
+        public static var created = Status(statusCode: 201, reasonPhrase: "Created")
         /// Accepted.
-        case accepted
+        public static var accepted = Status(statusCode: 202, reasonPhrase: "Accepted")
         /// Non Authoritative Information.
-        case nonAuthoritativeInformation
+        public static var nonAuthoritativeInformation = Status(statusCode: 203, reasonPhrase: "Non Authoritative Information")
         /// No Content.
-        case noContent
+        public static var noContent = Status(statusCode: 204, reasonPhrase: "No Content")
         /// Reset Content.
-        case resetContent
+        public static var resetContent = Status(statusCode: 205, reasonPhrase: "Reset Content")
         /// Partial Content.
-        case partialContent
+        public static var partialContent = Status(statusCode: 206, reasonPhrase: "Partial Content")
         
         /// Multiple choices.
-        case multipleChoices
+        public static var multipleChoices = Status(statusCode: 300, reasonPhrase: "Multiple Choices")
         /// Moved permanently.
-        case movedPermanently
+        public static var movedPermanently = Status(statusCode: 301, reasonPhrase: "Moved Permanently")
         /// Found.
-        case found
+        public static var found = Status(statusCode: 302, reasonPhrase: "Found")
         /// See Other
-        case seeOther
+        public static var seeOther = Status(statusCode: 303, reasonPhrase: "See Other")
         /// Not Modified.
-        case notModified
+        public static var notModified = Status(statusCode: 304, reasonPhrase: "Not Modified")
         /// Use Proxy.
-        case useProxy
+        public static var useProxy = Status(statusCode: 305, reasonPhrase: "Use Proxy")
         /// Switch Proxy.
-        case switchProxy
+        public static var switchProxy = Status(statusCode: 306, reasonPhrase: "Switch Proxy")
         /// Temporary Redirect.
-        case temporaryRedirect
+        public static var temporaryRedirect = Status(statusCode: 307, reasonPhrase: "Temporary Redirect")
         /// Permanent Redirect.
-        case permanentRedirect
+        public static var permanentRedirect = Status(statusCode: 308, reasonPhrase: "Permanent Redirect")
         
         /// Bad Request.
-        case badRequest
+        public static var badRequest = Status(statusCode: 400, reasonPhrase: "Bad Request")
         /// Unauthorized.
-        case unauthorized
+        public static var unauthorized = Status(statusCode: 401, reasonPhrase: "Unauthorized")
         /// Payment Required.
-        case paymentRequired
+        public static var paymentRequired = Status(statusCode: 402, reasonPhrase: "Payment Required")
         /// Forbidden.
-        case forbidden
+        public static var forbidden = Status(statusCode: 403, reasonPhrase: "Forbidden")
         /// Not Found.
-        case notFound
+        public static var notFound = Status(statusCode: 404, reasonPhrase: "Not Found")
         /// Method Not Allowed.
-        case methodNotAllowed
+        public static var methodNotAllowed = Status(statusCode: 405, reasonPhrase: "Method Not Allowed")
         /// Not Acceptable.
-        case notAcceptable
+        public static var notAcceptable = Status(statusCode: 406, reasonPhrase: "Not Acceptable")
         /// Proxy Authentication Required.
-        case proxyAuthenticationRequired
+        public static var proxyAuthenticationRequired = Status(statusCode: 407, reasonPhrase: "Proxy Authentication Required")
         /// Request Timeout.
-        case requestTimeout
+        public static var requestTimeout = Status(statusCode: 408, reasonPhrase: "Request Timeout")
         /// Conflict.
-        case conflict
+        public static var conflict = Status(statusCode: 409, reasonPhrase: "Conflict")
         /// Gone.
-        case gone
+        public static var gone = Status(statusCode: 410, reasonPhrase: "Gone")
         /// Length Required.
-        case lengthRequired
+        public static var lengthRequired = Status(statusCode: 411, reasonPhrase: "Length Required")
         /// Precodition Failed.
-        case preconditionFailed
+        public static var preconditionFailed = Status(statusCode: 412, reasonPhrase: "Precondition Failed")
         /// Request Entity Too Large.
-        case requestEntityTooLarge
+        public static var requestEntityTooLarge = Status(statusCode: 413, reasonPhrase: "Request Entity Too Large")
         /// Request URI Too Long.
-        case requestURITooLong
+        public static var requestURITooLong = Status(statusCode: 414, reasonPhrase: "Request URI Too Long")
         //// Unsupported Media Type.
-        case unsupportedMediaType
+        public static var unsupportedMediaType = Status(statusCode: 415, reasonPhrase: "Unsupported Media Type")
         /// Request Range Not Satisfiable.
-        case requestedRangeNotSatisfiable
+        public static var requestedRangeNotSatisfiable = Status(statusCode: 416, reasonPhrase: "Request Range Not Satisfiable")
         /// Expectation Failed.
-        case expectationFailed
+        public static var expectationFailed = Status(statusCode: 417, reasonPhrase: "Expectation Failed")
         /// I'm A Teapot.
-        case imATeapot
+        public static var imATeapot = Status(statusCode: 418, reasonPhrase: "I'm A Teapot")
         /// Authentication Timeout.
-        case authenticationTimeout
+        public static var authenticationTimeout = Status(statusCode: 419, reasonPhrase: "Authentication Timeout")
         /// Enhance Your Calm.
-        case enhanceYourCalm
+        public static var enhanceYourCalm = Status(statusCode: 420, reasonPhrase: "Enhance Your Calm")
         /// Unprocessable Entity.
-        case unprocessableEntity
+        public static var unprocessableEntity = Status(statusCode: 422, reasonPhrase: "Unprocessable Entity")
         /// Locked.
-        case locked
+        public static var locked = Status(statusCode: 423, reasonPhrase: "Locked")
         /// Failed Dependency.
-        case failedDependency
+        public static var failedDependency = Status(statusCode: 424, reasonPhrase: "Failed Dependency")
         /// Precondition Required.
-        case preconditionRequired
+        public static var preconditionRequired = Status(statusCode: 428, reasonPhrase: "Precondition Required")
         /// Too Many Requests.
-        case tooManyRequests
+        public static var tooManyRequests = Status(statusCode: 429, reasonPhrase: "Too Many Requests")
         /// Request Header Fields Too Large.
-        case requestHeaderFieldsTooLarge
+        public static var requestHeaderFieldsTooLarge = Status(statusCode: 431, reasonPhrase: "Request Header Fields Too Large")
         
         /// Internal Server Error.
-        case internalServerError
+        public static var internalServerError = Status(statusCode: 500, reasonPhrase: "Internal Server Error")
         /// Not Implemented.
-        case notImplemented
+        public static var notImplemented = Status(statusCode: 501, reasonPhrase: "Not Implemented")
         /// Bad Gateway.
-        case badGateway
+        public static var badGateway = Status(statusCode: 502, reasonPhrase: "Bad Gateway")
         /// Service Unavailable.
-        case serviceUnavailable
+        public static var serviceUnavailable = Status(statusCode: 503, reasonPhrase: "Service Unavailable")
         /// Gateway Timeout.
-        case gatewayTimeout
+        public static var gatewayTimeout = Status(statusCode: 504, reasonPhrase: "Gateway Timeout")
         /// HTTP Version Not Supported.
-        case httpVersionNotSupported
+        public static var httpVersionNotSupported = Status(statusCode: 505, reasonPhrase: "HTTP Version Not Supported")
         /// Variant Also Negotiates.
-        case variantAlsoNegotiates
+        public static var variantAlsoNegotiates = Status(statusCode: 506, reasonPhrase: "Variant Also Negotiates")
         /// Insufficient Storage.
-        case insufficientStorage
+        public static var insufficientStorage = Status(statusCode: 507, reasonPhrase: "Insufficient Storage")
         /// Loop Detected.
-        case loopDetected
+        public static var loopDetected = Status(statusCode: 508, reasonPhrase: "Loop Detected")
         /// Not Extended.
-        case notExtended
+        public static var notExtended = Status(statusCode: 510, reasonPhrase: "Not Extended")
         /// Network Authentication Required.
-        case networkAuthenticationRequired
-        /// Other status code.
-        case other(statusCode: Int, reasonPhrase: String)
+        public static var networkAuthenticationRequired = Status(statusCode: 511, reasonPhrase: "Network Authentication Required")
     }
 }
 
@@ -537,287 +511,6 @@ extension Response.Status {
     }
 }
 
-extension Response.Status {
-    /// :nodoc:
-    public init(statusCode: Int, reasonPhrase: String? = nil) {
-        switch statusCode {
-        case Response.Status.continue.statusCode:                      self = .continue
-        case Response.Status.switchingProtocols.statusCode:            self = .switchingProtocols
-        case Response.Status.processing.statusCode:                    self = .processing
-            
-        case Response.Status.ok.statusCode:                            self = .ok
-        case Response.Status.created.statusCode:                       self = .created
-        case Response.Status.accepted.statusCode:                      self = .accepted
-        case Response.Status.nonAuthoritativeInformation.statusCode:   self = .nonAuthoritativeInformation
-        case Response.Status.noContent.statusCode:                     self = .noContent
-        case Response.Status.resetContent.statusCode:                  self = .resetContent
-        case Response.Status.partialContent.statusCode:                self = .partialContent
-            
-        case Response.Status.multipleChoices.statusCode:               self = .multipleChoices
-        case Response.Status.movedPermanently.statusCode:              self = .movedPermanently
-        case Response.Status.found.statusCode:                         self = .found
-        case Response.Status.seeOther.statusCode:                      self = .seeOther
-        case Response.Status.notModified.statusCode:                   self = .notModified
-        case Response.Status.useProxy.statusCode:                      self = .useProxy
-        case Response.Status.switchProxy.statusCode:                   self = .switchProxy
-        case Response.Status.temporaryRedirect.statusCode:             self = .temporaryRedirect
-        case Response.Status.permanentRedirect.statusCode:             self = .permanentRedirect
-            
-        case Response.Status.badRequest.statusCode:                    self = .badRequest
-        case Response.Status.unauthorized.statusCode:                  self = .unauthorized
-        case Response.Status.paymentRequired.statusCode:               self = .paymentRequired
-        case Response.Status.forbidden.statusCode:                     self = .forbidden
-        case Response.Status.notFound.statusCode:                      self = .notFound
-        case Response.Status.methodNotAllowed.statusCode:              self = .methodNotAllowed
-        case Response.Status.notAcceptable.statusCode:                 self = .notAcceptable
-        case Response.Status.proxyAuthenticationRequired.statusCode:   self = .proxyAuthenticationRequired
-        case Response.Status.requestTimeout.statusCode:                self = .requestTimeout
-        case Response.Status.conflict.statusCode:                      self = .conflict
-        case Response.Status.gone.statusCode:                          self = .gone
-        case Response.Status.lengthRequired.statusCode:                self = .lengthRequired
-        case Response.Status.preconditionFailed.statusCode:            self = .preconditionFailed
-        case Response.Status.requestEntityTooLarge.statusCode:         self = .requestEntityTooLarge
-        case Response.Status.requestURITooLong.statusCode:             self = .requestURITooLong
-        case Response.Status.unsupportedMediaType.statusCode:          self = .unsupportedMediaType
-        case Response.Status.requestedRangeNotSatisfiable.statusCode:  self = .requestedRangeNotSatisfiable
-        case Response.Status.expectationFailed.statusCode:             self = .expectationFailed
-        case Response.Status.imATeapot.statusCode:                     self = .imATeapot
-        case Response.Status.authenticationTimeout.statusCode:         self = .authenticationTimeout
-        case Response.Status.enhanceYourCalm.statusCode:               self = .enhanceYourCalm
-        case Response.Status.unprocessableEntity.statusCode:           self = .unprocessableEntity
-        case Response.Status.locked.statusCode:                        self = .locked
-        case Response.Status.failedDependency.statusCode:              self = .failedDependency
-        case Response.Status.preconditionRequired.statusCode:          self = .preconditionRequired
-        case Response.Status.tooManyRequests.statusCode:               self = .tooManyRequests
-        case Response.Status.requestHeaderFieldsTooLarge.statusCode:   self = .requestHeaderFieldsTooLarge
-            
-        case Response.Status.internalServerError.statusCode:           self = .internalServerError
-        case Response.Status.notImplemented.statusCode:                self = .notImplemented
-        case Response.Status.badGateway.statusCode:                    self = .badGateway
-        case Response.Status.serviceUnavailable.statusCode:            self = .serviceUnavailable
-        case Response.Status.gatewayTimeout.statusCode:                self = .gatewayTimeout
-        case Response.Status.httpVersionNotSupported.statusCode:       self = .httpVersionNotSupported
-        case Response.Status.variantAlsoNegotiates.statusCode:         self = .variantAlsoNegotiates
-        case Response.Status.insufficientStorage.statusCode:           self = .insufficientStorage
-        case Response.Status.loopDetected.statusCode:                  self = .loopDetected
-        case Response.Status.notExtended.statusCode:                   self = .notExtended
-        case Response.Status.networkAuthenticationRequired.statusCode: self = .networkAuthenticationRequired
-            
-        default: self = .other(statusCode: statusCode, reasonPhrase: reasonPhrase ?? "CUSTOM")
-        }
-    }
-}
-
-extension Response.Status {
-    /// Status code.
-    public var statusCode: Int {
-        switch self {
-        case .continue:                      return 100
-        case .switchingProtocols:            return 101
-        case .processing:                    return 102
-            
-        case .ok:                            return 200
-        case .created:                       return 201
-        case .accepted:                      return 202
-        case .nonAuthoritativeInformation:   return 203
-        case .noContent:                     return 204
-        case .resetContent:                  return 205
-        case .partialContent:                return 206
-            
-        case .multipleChoices:               return 300
-        case .movedPermanently:              return 301
-        case .found:                         return 302
-        case .seeOther:                      return 303
-        case .notModified:                   return 304
-        case .useProxy:                      return 305
-        case .switchProxy:                   return 306
-        case .temporaryRedirect:             return 307
-        case .permanentRedirect:             return 308
-            
-        case .badRequest:                    return 400
-        case .unauthorized:                  return 401
-        case .paymentRequired:               return 402
-        case .forbidden:                     return 403
-        case .notFound:                      return 404
-        case .methodNotAllowed:              return 405
-        case .notAcceptable:                 return 406
-        case .proxyAuthenticationRequired:   return 407
-        case .requestTimeout:                return 408
-        case .conflict:                      return 409
-        case .gone:                          return 410
-        case .lengthRequired:                return 411
-        case .preconditionFailed:            return 412
-        case .requestEntityTooLarge:         return 413
-        case .requestURITooLong:             return 414
-        case .unsupportedMediaType:          return 415
-        case .requestedRangeNotSatisfiable:  return 416
-        case .expectationFailed:             return 417
-        case .imATeapot:                     return 418
-        case .authenticationTimeout:         return 419
-        case .enhanceYourCalm:               return 420
-        case .unprocessableEntity:           return 422
-        case .locked:                        return 423
-        case .failedDependency:              return 424
-        case .preconditionRequired:          return 428
-        case .tooManyRequests:               return 429
-        case .requestHeaderFieldsTooLarge:   return 431
-            
-        case .internalServerError:           return 500
-        case .notImplemented:                return 501
-        case .badGateway:                    return 502
-        case .serviceUnavailable:            return 503
-        case .gatewayTimeout:                return 504
-        case .httpVersionNotSupported:       return 505
-        case .variantAlsoNegotiates:         return 506
-        case .insufficientStorage:           return 507
-        case .loopDetected:                  return 508
-        case .notExtended:                   return 510
-        case .networkAuthenticationRequired: return 511
-            
-        case .other(let statusCode, _):        return statusCode
-        }
-    }
-    
-    /// Textual representation of the status code.
-    public var statusCodeString: String {
-        switch self {
-        case .continue:                      return "100"
-        case .switchingProtocols:            return "101"
-        case .processing:                    return "102"
-            
-        case .ok:                            return "200"
-        case .created:                       return "201"
-        case .accepted:                      return "202"
-        case .nonAuthoritativeInformation:   return "203"
-        case .noContent:                     return "204"
-        case .resetContent:                  return "205"
-        case .partialContent:                return "206"
-            
-        case .multipleChoices:               return "300"
-        case .movedPermanently:              return "301"
-        case .found:                         return "302"
-        case .seeOther:                      return "303"
-        case .notModified:                   return "304"
-        case .useProxy:                      return "305"
-        case .switchProxy:                   return "306"
-        case .temporaryRedirect:             return "307"
-        case .permanentRedirect:             return "308"
-            
-        case .badRequest:                    return "400"
-        case .unauthorized:                  return "401"
-        case .paymentRequired:               return "402"
-        case .forbidden:                     return "403"
-        case .notFound:                      return "404"
-        case .methodNotAllowed:              return "405"
-        case .notAcceptable:                 return "406"
-        case .proxyAuthenticationRequired:   return "407"
-        case .requestTimeout:                return "408"
-        case .conflict:                      return "409"
-        case .gone:                          return "410"
-        case .lengthRequired:                return "411"
-        case .preconditionFailed:            return "412"
-        case .requestEntityTooLarge:         return "413"
-        case .requestURITooLong:             return "414"
-        case .unsupportedMediaType:          return "415"
-        case .requestedRangeNotSatisfiable:  return "416"
-        case .expectationFailed:             return "417"
-        case .imATeapot:                     return "418"
-        case .authenticationTimeout:         return "419"
-        case .enhanceYourCalm:               return "420"
-        case .unprocessableEntity:           return "422"
-        case .locked:                        return "423"
-        case .failedDependency:              return "424"
-        case .preconditionRequired:          return "428"
-        case .tooManyRequests:               return "429"
-        case .requestHeaderFieldsTooLarge:   return "431"
-            
-        case .internalServerError:           return "500"
-        case .notImplemented:                return "501"
-        case .badGateway:                    return "502"
-        case .serviceUnavailable:            return "503"
-        case .gatewayTimeout:                return "504"
-        case .httpVersionNotSupported:       return "505"
-        case .variantAlsoNegotiates:         return "506"
-        case .insufficientStorage:           return "507"
-        case .loopDetected:                  return "508"
-        case .notExtended:                   return "510"
-        case .networkAuthenticationRequired: return "511"
-            
-        case .other(let statusCode, _):        return statusCode.description
-        }
-    }
-}
-
-extension Response.Status {
-    /// Reason phrase.
-    public var reasonPhrase: String {
-        switch self {
-        case .continue:                      return "Continue"
-        case .switchingProtocols:            return "Switching Protocols"
-        case .processing:                    return "Processing"
-            
-        case .ok:                            return "OK"
-        case .created:                       return "Created"
-        case .accepted:                      return "Accepted"
-        case .nonAuthoritativeInformation:   return "Non Authoritative Information"
-        case .noContent:                     return "No Content"
-        case .resetContent:                  return "Reset Content"
-        case .partialContent:                return "Partial Content"
-            
-        case .multipleChoices:               return "Multiple Choices"
-        case .movedPermanently:              return "Moved Permanently"
-        case .found:                         return "Found"
-        case .seeOther:                      return "See Other"
-        case .notModified:                   return "Not Modified"
-        case .useProxy:                      return "Use Proxy"
-        case .switchProxy:                   return "Switch Proxy"
-        case .temporaryRedirect:             return "Temporary Redirect"
-        case .permanentRedirect:             return "Permanent Redirect"
-            
-        case .badRequest:                    return "Bad Request"
-        case .unauthorized:                  return "Unauthorized"
-        case .paymentRequired:               return "Payment Required"
-        case .forbidden:                     return "Forbidden"
-        case .notFound:                      return "Not Found"
-        case .methodNotAllowed:              return "Method Not Allowed"
-        case .notAcceptable:                 return "Not Acceptable"
-        case .proxyAuthenticationRequired:   return "Proxy Authentication Required"
-        case .requestTimeout:                return "Request Timeout"
-        case .conflict:                      return "Conflict"
-        case .gone:                          return "Gone"
-        case .lengthRequired:                return "Length Required"
-        case .preconditionFailed:            return "Precondition Failed"
-        case .requestEntityTooLarge:         return "Request Entity Too Large"
-        case .requestURITooLong:             return "Request URI Too Long"
-        case .unsupportedMediaType:          return "Unsupported Media Type"
-        case .requestedRangeNotSatisfiable:  return "Requested Range Not Satisfiable"
-        case .expectationFailed:             return "Expectation Failed"
-        case .imATeapot:                     return "I'm A Teapot"
-        case .authenticationTimeout:         return "Authentication Timeout"
-        case .enhanceYourCalm:               return "Enhance Your Calm"
-        case .unprocessableEntity:           return "Unprocessable Entity"
-        case .locked:                        return "Locked"
-        case .failedDependency:              return "Failed Dependency"
-        case .preconditionRequired:          return "Precondition Required"
-        case .tooManyRequests:               return "Too Many Requests"
-        case .requestHeaderFieldsTooLarge:   return "Request Header Fields Too Large"
-            
-        case .internalServerError:           return "Internal Server Error"
-        case .notImplemented:                return "Not Implemented"
-        case .badGateway:                    return "Bad Gateway"
-        case .serviceUnavailable:            return "Service Unavailable"
-        case .gatewayTimeout:                return "Gateway Timeout"
-        case .httpVersionNotSupported:       return "HTTP Version Not Supported"
-        case .variantAlsoNegotiates:         return "Variant Also Negotiates"
-        case .insufficientStorage:           return "Insufficient Storage"
-        case .loopDetected:                  return "Loop Detected"
-        case .notExtended:                   return "Not Extended"
-        case .networkAuthenticationRequired: return "Network Authentication Required"
-        case .other(_, let reasonPhrase): return reasonPhrase
-        }
-    }
-}
-
 extension Response.Status : Hashable {
     /// :nodoc:
     public var hashValue: Int {
@@ -833,7 +526,7 @@ extension Response.Status : Hashable {
 extension Response.Status : CustomStringConvertible {
     /// :nodoc:
     public var description: String {
-        return statusCodeString + " " + reasonPhrase
+        return statusCode.description + " " + reasonPhrase
     }
 }
 
