@@ -991,9 +991,9 @@ public protocol Writable {
 
 /// HTTP message body representation.
 public enum Body {
-    /// Body is in a readable form. This case is usually produced by parsers.
+    /// Body is in a readable form. This case is usually produced by parsers and used by responders.
     case readable(Readable)
-    /// Body is in a writable form. This case is usually produced by responders.
+    /// Body is in a writable form. This case is usually produced by responders and used by serializers.
     case writable(Write)
     
     /// Closure used to write binary data to the body.
@@ -1124,9 +1124,9 @@ public protocol AsyncWritable {
 
 /// Asynchronous HTTP message body representation.
 public enum AsyncBody {
-    /// Body is in a readable form. This case is usually produced by parsers.
+    /// Body is in a readable form. This case is usually produced by parsers and used by responders.
     case readable(AsyncReadable)
-    /// Body is in a writable form. This case is usually produced by responders.
+    /// Body is in a writable form. This case is usually produced by responders and used by serializers.
     case writable(AsyncWrite)
     
     /// Closure used to write binary data to the body asynchronously.

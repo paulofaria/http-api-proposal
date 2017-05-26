@@ -219,6 +219,9 @@
 <h4 id='use-code-result-lt-value-error-gt-code-for-asynchronous-apis' class='heading'>Use <code>Result&lt;Value, Error&gt;</code> for asynchronous APIs.</h4>
 
 <p><code>Result</code> is a quite known type and it&rsquo;s used extensively by other async frameworks.</p>
+<h4 id='code-body-code-code-asyncbody-code-cases-code-readable-code-code-writable-code' class='heading'><code>Body</code>/<code>AsyncBody</code> cases <code>readable</code>/<code>writable</code></h4>
+
+<p>Depending on where the body is created and used the body might assume different forms. On the server-side when parsing an HTTP request, the parser can produce a <code>readable</code> body which will be consumed by a responder (element that responds to an HTTP request with an HTTP response) in the form of <code>Readable</code>. On the other hand, the responder might use a <code>writable</code> body by providing a <code>Body.Write</code> callback. The HTTP serializer when serializing will pass a <code>Writable</code> to the callback, which will then effectively write the response body.</p>
 
           </section>
         </section>
