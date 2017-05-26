@@ -4,7 +4,7 @@ This repo contains an HTTP API proposal for the [Swift Server APIs Project](http
 
 ## API Reference
 
-For a more convenient overview of the API you can read the [API reference](https://paulofaria.github.io/http-proposal/).
+For a more convenient overview of the API you can read the [API reference](https://paulofaria.github.io/http-api-proposal/).
 
 ## Rationale
 
