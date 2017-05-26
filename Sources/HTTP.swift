@@ -369,18 +369,12 @@ public struct Response : Message {
     /// User data storage.
     public var storage: Storage = [:]
     
-    /// `Set-Cookie` is the *only* HTTP header which can appear
-    /// more than once in an HTTP message. So we make exception
-    /// and store the cookies in a separate container from the other
-    /// HTTP headers.
-    public var cookieHeaders: Set<String> = []
-    
     /// Creates an HTTP response.
     public init(
         status: Status,
         headers: Headers,
         version: Version
-        ) {
+    ) {
         self.status = status
         self.headers = headers
         self.version = version

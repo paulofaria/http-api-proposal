@@ -166,12 +166,59 @@
 <h2 id='rationale' class='heading'>Rationale</h2>
 
 <p>Below I describe the reasoning behind the API design.</p>
-<h3 id='no-code-http-code-prefix' class='heading'>No <code>HTTP</code> prefix</h3>
+<h4 id='no-code-http-code-prefix' class='heading'>No <code>HTTP</code> prefix</h4>
 
 <p>There&rsquo;s no need to prefix the types with <code>HTTP</code> because they are already defined inside the <code>HTTP</code> module. Their complete names are <code>HTTP.Request</code>, <code>HTTP.Response</code>, etc. Because the module name (<code>HTTP</code>) is so short, disambiguating by adding the <code>HTTP</code> prefix (<code>HTTP.Request</code>) does not make the names prohibitively long and in comparison to <code>HTTPRequest</code> it is only a single character longer. I&rsquo;d even argue that <code>HTTP.Request</code> is more readable than <code>HTTPRequest</code>.</p>
-<h3 id='code-http-version-code-as-a-struct' class='heading'><code>HTTP.Version</code> as a struct</h3>
+<h4 id='code-http-version-code-as-a-struct' class='heading'><code>HTTP.Version</code> as a struct</h4>
 
 <p>Having <code>HTTP.Version</code> as a <code>struct</code> allows it to adopt protocols, being the most useful <a href="https://github.com/paulofaria/http-proposal/blob/master/Sources/HTTP.swift#L31">CustomStringConvertible</a> when serializing the HTTP message.</p>
+<h4 id='code-http-headers-code-single-storage-internal' class='heading'><code>HTTP.Headers</code> single storage [Internal]</h4>
+
+<p>Having a single storage for <code>HTTP.Headers</code> should provide better performance. We delegate case insensitive matching to the implementation of <code>HTTP.Headers.Field</code>&lsquo;s <code>Equatable</code> conformance.</p>
+<h4 id='add-code-storage-code-to-code-http-message-code-protocol' class='heading'>Add <code>Storage</code> to <code>HTTP.Message</code> protocol</h4>
+
+<p>This is <em>very</em> important for extensiblity as it allows API users to store data in <code>HTTP.Message</code> extensions. The most common use case for this would be adding contextual data inside HTTP middleware.</p>
+<h4 id='code-uri-code' class='heading'><code>URI</code></h4>
+
+<p><code>Foundation.URL</code> and <code>Foundation.URLComponents</code> are quite slow on parsing and initialization. I imagine this is because of all of the other functionality bundled in the aforementioned types, specially <code>Foundation.URL</code>. Also, strictly speaking, HTTP RFCs mention URIs not URL, but that&rsquo;s just a matter of naming.</p>
+<h4 id='code-http-request-method-code-nested-in-code-http-request-code' class='heading'><code>HTTP.Request.Method</code> nested in <code>HTTP.Request</code></h4>
+
+<p>HTTP methods only exist inside HTTP requests, more specifically in the request line. Nesting it inside <code>HTTP.Request</code> also helps disambiguating from <code>Foundation.Method</code>.</p>
+<h4 id='lowercase-code-http-request-method-code-cases' class='heading'>Lowercase <code>HTTP.Request.Method</code> cases</h4>
+
+<p>According to Swift&rsquo;s &rsquo;<a href="https://swift.org/documentation/api-design-guidelines/">API Design Guidelines</a> enum cases should be lowerCamelCase.</p>
+
+<blockquote>
+<p>Follow case conventions. Names of types and protocols are UpperCamelCase. Everything else is lowerCamelCase.</p>
+
+<p>Acronyms and initialisms that commonly appear as all upper case in American English should be uniformly up- or down-cased according to case conventions:</p>
+</blockquote>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">utf8Bytes</span><span class="p">:</span> <span class="p">[</span><span class="kt">UTF8</span><span class="o">.</span><span class="kt">CodeUnit</span><span class="p">]</span>
+<span class="k">var</span> <span class="nv">isRepresentableAsASCII</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="k">var</span> <span class="nv">userSMTPServer</span><span class="p">:</span> <span class="kt">SecureSMTPServer</span>
+</code></pre>
+
+<blockquote>
+<p>Other acronyms should be treated as ordinary words:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>var radarDetector: RadarScanner
+var enjoysScubaDiving = true
+</code></pre>
+<h4 id='code-http-response-status-code-nested-in-code-http-response-code' class='heading'><code>HTTP.Response.Status</code> nested in <code>HTTP.Response</code></h4>
+
+<p>Same reasoning as <code>HTTP.Request.Method</code> nested inside <code>HTTP.Request</code>. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside <code>HTTP.Request</code> also helps disambiguating from other possible <code>Status</code> types.</p>
+<h4 id='deadlines-instead-of-timeouts' class='heading'>Deadlines instead of timeouts.</h4>
+
+<p>Deadlines are easier to deal with. There&rsquo;s no need for intermediate calculations when providing the value for separate calls.</p>
+<h4 id='use-code-async-code-as-a-prefix-for-assynchronous-based-types' class='heading'>Use <code>Async</code> as a prefix for assynchronous based types.</h4>
+
+<p>Most common APIs are synchronous. Asynchronous APIs are the exception in general. Prefixing all synchronous APIs with <code>Sync</code> would be insane.</p>
+<h4 id='use-code-unsafemutablerawbufferpointer-code-and-code-unsaferawbufferpointer-code-instead-of-code-foundation-data-code' class='heading'>Use <code>UnsafeMutableRawBufferPointer</code> and <code>UnsafeRawBufferPointer</code> instead of <code>Foundation.Data</code></h4>
+
+<p>Using buffer pointers is more performant and depends solely on the standard library. Buffer pointers are also better suited for C APIs interfacing. The current proposal doesn&rsquo;t depend on <code>Foundation</code> at all, but it&rsquo;s possible to provide extensions for the APIs that take buffer pointers converting to and from <code>Foundation.Data</code>.</p>
+<h4 id='use-code-result-lt-value-error-gt-code-for-asynchronous-apis' class='heading'>Use <code>Result&lt;Value, Error&gt;</code> for asynchronous APIs.</h4>
+
+<p><code>Result</code> is a quite known type and it&rsquo;s used extensively by other async frameworks.</p>
 
           </section>
         </section>
