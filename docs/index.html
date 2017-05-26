@@ -108,10 +108,7 @@
             <a href="Async.html">Async</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/Result.html">Result</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Async.html#/s:4HTTP13ResultHandler">ResultHandler</a>
+                <a href="Enums/Result.html">Result</a>
               </li>
               <li class="nav-group-task">
                 <a href="Async.html#/s:4HTTP11AsyncResult">AsyncResult</a>
@@ -146,6 +143,14 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="Other Structs.html">Other Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/AnyError.html">AnyError</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -158,6 +163,15 @@
 <h2 id='api-reference' class='heading'>API Reference</h2>
 
 <p>For a more convenient overview of the API you can read the <a href="https://paulofaria.github.io/http-proposal/">API reference</a>.</p>
+<h2 id='rationale' class='heading'>Rationale</h2>
+
+<p>Below I describe the reasoning behind the API design.</p>
+<h3 id='no-code-http-code-prefix' class='heading'>No <code>HTTP</code> prefix</h3>
+
+<p>There&rsquo;s no need to prefix the types with <code>HTTP</code> because they are already defined inside the <code>HTTP</code> module. Their complete names are <code>HTTP.Request</code>, <code>HTTP.Response</code>, etc. Because the module name (<code>HTTP</code>) is so short, disambiguating by adding the <code>HTTP</code> prefix (<code>HTTP.Request</code>) does not make the names prohibitively long and in comparison to <code>HTTPRequest</code> it is only a single character longer. I&rsquo;d even argue that <code>HTTP.Request</code> is more readable than <code>HTTPRequest</code>.</p>
+<h3 id='code-http-version-code-as-a-struct' class='heading'><code>HTTP.Version</code> as a struct</h3>
+
+<p>Having <code>HTTP.Version</code> as a <code>struct</code> allows it to adopt protocols, being the most useful <a href="https://github.com/paulofaria/http-proposal/blob/master/Sources/HTTP.swift#L31">CustomStringConvertible</a> when serializing the HTTP message.</p>
 
           </section>
         </section>

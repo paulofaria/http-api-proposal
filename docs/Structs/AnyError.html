@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Deadline Struct Reference</title>
+    <title>AnyError Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/Deadline" class="dashAnchor"></a>
-    <a title="Deadline Struct Reference"></a>
+    <a name="//apple_ref/swift/Struct/AnyError" class="dashAnchor"></a>
+    <a title="AnyError Struct Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">HTTP Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">HTTP Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Deadline Struct Reference
+        AnyError Struct Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -157,20 +157,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Deadline</h1>
+            <h1>AnyError</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Deadline</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AnyError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
 
                 </div>
               </div>
-            <p>Representation of a deadline.</p>
-
-<p>To create a <code>Deadline</code> you can either use the static values <code>.immediately</code> and <code>.never</code>
-or call <code>fromNow()</code> from a previously created <code><a href="../Structs/Duration.html">Duration</a></code>.</p>
-<h2 id='example' class='heading'>Example:</h2>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">deadline</span> <span class="o">=</span> <span class="mi">30</span><span class="o">.</span><span class="n">seconds</span><span class="o">.</span><span class="nf">fromNow</span><span class="p">()</span>
-</code></pre>
+            <p>Type erased error.</p>
 
           </section>
           <section class="section task-group-section">
@@ -179,9 +173,9 @@ or call <code>fromNow()</code> from a previously created <code><a href="../Struc
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV4HTTP8Deadline5valueVs5Int64"></a>
-                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV4HTTP8Deadline5valueVs5Int64">value</a>
+                    <a name="/s:vV4HTTP8AnyError5errorPs5Error_"></a>
+                    <a name="//apple_ref/swift/Property/error" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV4HTTP8AnyError5errorPs5Error_">error</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -189,14 +183,14 @@ or call <code>fromNow()</code> from a previously created <code><a href="../Struc
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Raw value representing the deadline.</p>
+                        <p>Underlying error.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int64</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span></code></pre>
 
                         </div>
                       </div>
@@ -206,9 +200,9 @@ or call <code>fromNow()</code> from a previously created <code><a href="../Struc
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZFV4HTTP8Deadline3nowFT_S0_"></a>
-                    <a name="//apple_ref/swift/Method/now()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFV4HTTP8Deadline3nowFT_S0_">now()</a>
+                    <a name="/s:FV4HTTP8AnyErrorcFT5errorPs5Error__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(error:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV4HTTP8AnyErrorcFT5errorPs5Error__S0_">init(error:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -216,68 +210,14 @@ or call <code>fromNow()</code> from a previously created <code><a href="../Struc
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Deadline representing now.</p>
+                        <p>Creates an error type erasing <code><a href="../Structs/AnyError.html#/s:vV4HTTP8AnyError5errorPs5Error_">error</a></code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">now</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Deadline</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZvV4HTTP8Deadline11immediatelyS0_"></a>
-                    <a name="//apple_ref/swift/Variable/immediately" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZvV4HTTP8Deadline11immediatelyS0_">immediately</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Special value to be used if the operation needs to be performed without blocking.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">immediately</span><span class="p">:</span> <span class="kt">Deadline</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZvV4HTTP8Deadline5neverS0_"></a>
-                    <a name="//apple_ref/swift/Variable/never" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZvV4HTTP8Deadline5neverS0_">never</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Special value to be used to allow the operation to block forever if needed.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">never</span><span class="p">:</span> <span class="kt">Deadline</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>

@@ -38,10 +38,11 @@ extension Version : CustomStringConvertible {
 /// Representation of the HTTP headers.
 /// Headers are subscriptable using case-insensitive comparison.
 public struct Headers {
-    fileprivate var headers: [Field: String]
+    /// HTTP headers.
+    public var headers: [(Field, String)]
     
     /// :nodoc:
-    public init(_ headers: [Field: String]) {
+    public init(_ headers: [(Field, String)]) {
         self.headers = headers
     }
     
@@ -60,20 +61,14 @@ public struct Headers {
 
 extension Headers : ExpressibleByDictionaryLiteral {
     /// :nodoc:
-    public init(dictionaryLiteral elements: (Field, String)...) {
-        var headers: [Field: String] = [:]
-        
-        for (key, value) in elements {
-            headers[key] = value
-        }
-        
+    public init(dictionaryLiteral headers: (Field, String)...) {
         self.headers = headers
     }
 }
 
 extension Headers : Sequence {
     /// :nodoc:
-    public func makeIterator() -> DictionaryIterator<Field, String> {
+    public func makeIterator() -> IndexingIterator<Array<(Field, String)>> {
         return headers.makeIterator()
     }
     
@@ -88,18 +83,22 @@ extension Headers : Sequence {
     }
     
     /// :nodoc:
-    public subscript(field: Field) -> String? {
+    public subscript(field: Field) -> [String] {
         get {
-            return headers[field]
+            return headers.filter({ $0.0 == field }).map({ $0.1 })
         }
         
-        set(header) {
-            headers[field] = header
+        set(headers) {
+            self.headers = self.headers.filter({ $0.0 == field })
+            
+            for header in headers {
+                append(field: field, header: header)
+            }
         }
     }
     
     /// :nodoc:
-    public subscript(field: String) -> String? {
+    public subscript(field: String) -> [String] {
         get {
             return self[Field(field)]
         }
@@ -107,6 +106,11 @@ extension Headers : Sequence {
         set(header) {
             self[Field(field)] = header
         }
+    }
+    
+    /// Appends a field to the headers.
+    public mutating func append(field: Field, header: String) {
+        headers.append(field, header)
     }
 }
 
@@ -126,7 +130,17 @@ extension Headers : CustomStringConvertible {
 extension Headers : Equatable {
     /// :nodoc:
     public static func == (lhs: Headers, rhs: Headers) -> Bool {
-        return lhs.headers == rhs.headers
+        guard lhs.count == rhs.count else {
+            return false
+        }
+        
+        for (lhsHeader, rhsHeader) in zip(lhs, rhs) {
+            if lhsHeader.0 != rhsHeader.0 || lhsHeader.1 != rhsHeader.1 {
+                return false
+            }
+        }
+        
+        return true
     }
 }
 
@@ -994,9 +1008,6 @@ public enum Body {
 
 // MARK: Async
 
-/// Asynchronous result.
-public typealias ResultHandler<T> = (Void) throws -> T
-
 /// Result of an operation. Usually retuned wrapped in an `AsyncResult`.
 ///
 /// # Example
@@ -1011,28 +1022,60 @@ public typealias ResultHandler<T> = (Void) throws -> T
 ///     }
 /// }
 /// ```
-public struct Result<T> {
-    fileprivate let handler: ResultHandler<T>
+public enum Result<Value, Error : Swift.Error> {
+    /// Success.
+    case success(Value)
+    /// Failure.
+    case failure(Error)
     
-    /// Creates a result from a handler.
-    public init(_ handler: @escaping ResultHandler<T>) {
-        self.handler = handler
+    /// Creates a succesfull result.
+    public init(_ value: Value) {
+        self = .success(value)
+    }
+    
+    /// Creates a failure result.
+    public init(_ error: Error) {
+        self = .failure(error)
     }
     
     /// Tries to extract the value from the result.
-    public func value() throws -> T {
-        return try handler()
+    public func value() throws -> Value {
+        switch self {
+        case let .success(value):
+            return value
+        case let .failure(error):
+            throw error
+        }
     }
     
     /// Useful when you just want to check if the operation succeeded
     /// without caring about the result.
     public func check() throws {
-        _ = try handler()
+        _ = try value()
     }
 }
 
 /// Asynchronous result handler.
-public typealias AsyncResult<T> = (Result<T>) -> Void
+public typealias AsyncResult<Value, Error : Swift.Error> = (Result<Value, Error>) -> Void
+
+/// Type erased error.
+public struct AnyError : Error {
+    /// Underlying error.
+    public let error: Error
+    
+    /// Creates an error type erasing `error`.
+    public init(error: Error) {
+        self.error = error
+    }
+}
+
+extension AnyError : CustomStringConvertible {
+    /// :nodoc:
+    public var description: String {
+        return String(describing: error)
+    }
+}
+
 
 // MARK: AsyncReadable
 
@@ -1055,7 +1098,7 @@ public protocol AsyncReadable {
     func read(
         _ buffer: UnsafeMutableRawBufferPointer,
         deadline: Deadline,
-        result: AsyncResult<UnsafeRawBufferPointer>
+        result: AsyncResult<UnsafeRawBufferPointer, AnyError>
     )
 }
 
@@ -1079,7 +1122,7 @@ public protocol AsyncWritable {
     func write(
         _ buffer: UnsafeRawBufferPointer,
         deadline: Deadline,
-        result: AsyncResult<Void>
+        result: AsyncResult<Void, AnyError>
     ) throws
 }
 
