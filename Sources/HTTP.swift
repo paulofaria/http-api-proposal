@@ -1127,8 +1127,8 @@ public enum AsyncBody {
     /// Body is in a readable form. This case is usually produced by parsers and used by responders.
     case readable(AsyncReadable)
     /// Body is in a writable form. This case is usually produced by responders and used by serializers.
-    case writable(AsyncWrite)
+    case writable(Write)
     
     /// Closure used to write binary data to the body asynchronously.
-    public typealias AsyncWrite = (AsyncWritable) throws -> Void
+    public typealias Write = (AsyncWritable) throws -> Void
 }
