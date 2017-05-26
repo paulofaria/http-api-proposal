@@ -1,0 +1,59 @@
+clean: true
+module: HTTP
+author: Zewo
+author_url: https://swift.org/server-apis/
+github_url: https://github.com/paulofaria/http-proposal
+swift_version: 3.1
+xcodebuild_arguments:
+  - -scheme
+  - HTTP
+
+custom_categories:
+  - name: Version
+    children:
+    - Version
+
+  - name: Headers
+    children:
+    - Headers
+
+  - name: Message
+    children:
+    - Message
+    - Storage
+    
+  - name: URI
+    children:
+    - URI
+
+  - name: Request
+    children:
+    - Request
+
+  - name: Response
+    children:
+    - Response
+
+  - name: Time
+    children:
+    - Deadline
+    - Duration
+    - Int
+
+  - name: Async
+    children:
+    - Result
+    - ResultHandler
+    - AsyncResult
+
+  - name: IO
+    children:
+    - Readable
+    - Writable
+    - AsyncReadable
+    - AsyncWritable
+
+  - name: Body
+    children:
+    - Body
+    - AsyncBody

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Async  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Async  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">HTTP Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/paulofaria/http-proposal"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">HTTP Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Async  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Version.html">Version</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Version.html">Version</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Headers.html">Headers</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Headers.html">Headers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Headers/Field.html">– Field</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Message.html">Message</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Message.html">Message</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Message.html#/s:4HTTP7Storage">Storage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="URI.html">URI</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/URI.html">URI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/URI/UserInfo.html">– UserInfo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Request.html">Request</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Request.html">Request</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Request/Method.html">– Method</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Response.html">Response</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Response.html">Response</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Response/Status.html">– Status</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Time.html">Time</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Deadline.html">Deadline</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Duration.html">Duration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Int.html">Int</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Async.html">Async</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Result.html">Result</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Async.html#/s:4HTTP13ResultHandler">ResultHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Async.html#/s:4HTTP11AsyncResult">AsyncResult</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="IO.html">IO</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Readable.html">Readable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Writable.html">Writable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/AsyncReadable.html">AsyncReadable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/AsyncWritable.html">AsyncWritable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Body.html">Body</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/Body.html">Body</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/AsyncBody.html">AsyncBody</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Async</h1>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Async"></a>
+                <a name="//apple_ref/swift/Section/Async" class="dashAnchor"></a>
+                <a href="#/Async">
+                  <h3 class="section-name">Async</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V4HTTP6Result"></a>
+                    <a name="//apple_ref/swift/Struct/Result" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V4HTTP6Result">Result</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Result of an operation. Usually retuned wrapped in an <code><a href="Async.html#/s:4HTTP11AsyncResult">AsyncResult</a></code>.</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="n">readable</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="nv">deadline</span><span class="p">:</span> <span class="mi">1</span><span class="o">.</span><span class="n">minute</span><span class="o">.</span><span class="nf">fromNow</span><span class="p">())</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">readBuffer</span> <span class="o">=</span> <span class="k">try</span> <span class="n">result</span><span class="o">.</span><span class="nf">value</span><span class="p">()</span>
+        <span class="nf">process</span><span class="p">(</span><span class="n">readBuffer</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">handle</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+                        <a href="Structs/Result.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Version"></a>
+                <a name="//apple_ref/swift/Section/Version" class="dashAnchor"></a>
+                <a href="#/Version">
+                  <h3 class="section-name">Version</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4HTTP13ResultHandler"></a>
+                    <a name="//apple_ref/swift/Alias/ResultHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4HTTP13ResultHandler">ResultHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous result.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ResultHandler</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Void</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">T</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4HTTP11AsyncResult"></a>
+                    <a name="//apple_ref/swift/Alias/AsyncResult" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4HTTP11AsyncResult">AsyncResult</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronous result handler.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">AsyncResult</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Structs/Result.html">Result</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://swift.org/server-apis/" target="_blank" rel="external">Zewo</a>. All rights reserved. (Last updated: 2017-05-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
