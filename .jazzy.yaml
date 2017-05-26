@@ -43,7 +43,6 @@ custom_categories:
   - name: Async
     children:
     - Result
-    - ResultHandler
     - AsyncResult
 
   - name: IO
