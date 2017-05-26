@@ -169,22 +169,22 @@
 <h4 id='no-code-http-code-prefix' class='heading'>No <code>HTTP</code> prefix</h4>
 
 <p>There&rsquo;s no need to prefix the types with <code>HTTP</code> because they are already defined inside the <code>HTTP</code> module. Their complete names are <code>HTTP.Request</code>, <code>HTTP.Response</code>, etc. Because the module name (<code>HTTP</code>) is so short, disambiguating by adding the <code>HTTP</code> prefix (<code>HTTP.Request</code>) does not make the names prohibitively long and in comparison to <code>HTTPRequest</code> it is only a single character longer. I&rsquo;d even argue that <code>HTTP.Request</code> is more readable than <code>HTTPRequest</code>.</p>
-<h4 id='code-http-version-code-as-a-struct' class='heading'><code>HTTP.Version</code> as a struct</h4>
+<h4 id='code-version-code-as-a-struct' class='heading'><code>Version</code> as a struct</h4>
 
-<p>Having <code>HTTP.Version</code> as a <code>struct</code> allows it to adopt protocols, being the most useful <a href="https://github.com/paulofaria/http-proposal/blob/master/Sources/HTTP.swift#L31">CustomStringConvertible</a> when serializing the HTTP message.</p>
-<h4 id='code-http-headers-code-single-storage-internal' class='heading'><code>HTTP.Headers</code> single storage [Internal]</h4>
+<p>Having <code>Version</code> as a <code>struct</code> allows it to adopt protocols, being the most useful <a href="https://github.com/paulofaria/http-proposal/blob/master/Sources/HTTP.swift#L31">CustomStringConvertible</a> when serializing the HTTP message.</p>
+<h4 id='code-headers-code-single-storage-implementation-detail' class='heading'><code>Headers</code> single storage [Implementation Detail]</h4>
 
-<p>Having a single storage for <code>HTTP.Headers</code> should provide better performance. We delegate case insensitive matching to the implementation of <code>HTTP.Headers.Field</code>&lsquo;s <code>Equatable</code> conformance.</p>
-<h4 id='add-code-storage-code-to-code-http-message-code-protocol' class='heading'>Add <code>Storage</code> to <code>HTTP.Message</code> protocol</h4>
+<p>Having a single storage for <code>Headers</code> should provide better performance. We delegate case insensitive matching to the implementation of <code>Headers.Field</code>&lsquo;s <code>Equatable</code> conformance.</p>
+<h4 id='add-code-storage-code-to-code-message-code-protocol' class='heading'>Add <code>Storage</code> to <code>Message</code> protocol</h4>
 
-<p>This is <em>very</em> important for extensiblity as it allows API users to store data in <code>HTTP.Message</code> extensions. The most common use case for this would be adding contextual data inside HTTP middleware.</p>
+<p>This is <em>very</em> important for extensiblity as it allows API users to store data in <code>Message</code> extensions. The most common use case for this would be adding contextual data inside HTTP middleware.</p>
 <h4 id='code-uri-code' class='heading'><code>URI</code></h4>
 
 <p><code>Foundation.URL</code> and <code>Foundation.URLComponents</code> are quite slow on parsing and initialization. I imagine this is because of all of the other functionality bundled in the aforementioned types, specially <code>Foundation.URL</code>. Also, strictly speaking, HTTP RFCs mention URIs not URL, but that&rsquo;s just a matter of naming.</p>
-<h4 id='code-http-request-method-code-nested-in-code-http-request-code' class='heading'><code>HTTP.Request.Method</code> nested in <code>HTTP.Request</code></h4>
+<h4 id='code-request-method-code-nested-inside-code-request-code' class='heading'><code>Request.Method</code> nested inside <code>Request</code></h4>
 
-<p>HTTP methods only exist inside HTTP requests, more specifically in the request line. Nesting it inside <code>HTTP.Request</code> also helps disambiguating from <code>Foundation.Method</code>.</p>
-<h4 id='lowercase-code-http-request-method-code-cases' class='heading'>Lowercase <code>HTTP.Request.Method</code> cases</h4>
+<p>HTTP methods only exist inside HTTP requests, more specifically in the request line. Nesting it inside <code>Request</code> also helps disambiguating from <code>Foundation.Method</code>.</p>
+<h4 id='lowercase-code-request-method-code-cases' class='heading'>Lowercase <code>Request.Method</code> cases</h4>
 
 <p>According to Swift&rsquo;s &rsquo;<a href="https://swift.org/documentation/api-design-guidelines/">API Design Guidelines</a> enum cases should be lowerCamelCase.</p>
 
@@ -204,9 +204,9 @@
 <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">radarDetector</span><span class="p">:</span> <span class="kt">RadarScanner</span>
 <span class="k">var</span> <span class="nv">enjoysScubaDiving</span> <span class="o">=</span> <span class="kc">true</span>
 </code></pre>
-<h4 id='code-http-response-status-code-nested-in-code-http-response-code' class='heading'><code>HTTP.Response.Status</code> nested in <code>HTTP.Response</code></h4>
+<h4 id='code-response-status-code-nested-in-code-response-code' class='heading'><code>Response.Status</code> nested in <code>Response</code></h4>
 
-<p>Same reasoning as <code>HTTP.Request.Method</code> nested inside <code>HTTP.Request</code>. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside <code>HTTP.Response</code> also helps disambiguating from other possible <code>Status</code> types.</p>
+<p>Same reasoning as <code>Request.Method</code> nested inside <code>Request</code>. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside <code>Response</code> also helps disambiguating from other possible <code>Status</code> types.</p>
 <h4 id='code-deadline-code-instead-of-timeouts' class='heading'><code>Deadline</code> instead of timeouts.</h4>
 
 <p>Deadlines are easier to deal with. There&rsquo;s no need for intermediate calculations when providing the value for separate calls.</p>

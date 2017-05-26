@@ -14,27 +14,27 @@ Below I describe the reasoning behind the API design.
 
 There's no need to prefix the types with `HTTP` because they are already defined inside the `HTTP` module. Their complete names are `HTTP.Request`, `HTTP.Response`, etc. Because the module name (`HTTP`) is so short, disambiguating by adding the `HTTP` prefix (`HTTP.Request`) does not make the names prohibitively long and in comparison to `HTTPRequest` it is only a single character longer. I'd even argue that `HTTP.Request` is more readable than `HTTPRequest`.
 
-#### `HTTP.Version` as a struct 
+#### `Version` as a struct 
 
-Having `HTTP.Version` as a `struct` allows it to adopt protocols, being the most useful [CustomStringConvertible](https://github.com/paulofaria/http-proposal/blob/master/Sources/HTTP.swift#L31) when serializing the HTTP message.
+Having `Version` as a `struct` allows it to adopt protocols, being the most useful [CustomStringConvertible](https://github.com/paulofaria/http-proposal/blob/master/Sources/HTTP.swift#L31) when serializing the HTTP message.
 
-#### `HTTP.Headers` single storage [Internal]
+#### `Headers` single storage [Implementation Detail]
 
-Having a single storage for `HTTP.Headers` should provide better performance. We delegate case insensitive matching to the implementation of `HTTP.Headers.Field`'s `Equatable` conformance.
+Having a single storage for `Headers` should provide better performance. We delegate case insensitive matching to the implementation of `Headers.Field`'s `Equatable` conformance.
 
-#### Add `Storage` to `HTTP.Message` protocol
+#### Add `Storage` to `Message` protocol
 
-This is *very* important for extensiblity as it allows API users to store data in `HTTP.Message` extensions. The most common use case for this would be adding contextual data inside HTTP middleware.
+This is *very* important for extensiblity as it allows API users to store data in `Message` extensions. The most common use case for this would be adding contextual data inside HTTP middleware.
 
 #### `URI`
 
 `Foundation.URL` and `Foundation.URLComponents` are quite slow on parsing and initialization. I imagine this is because of all of the other functionality bundled in the aforementioned types, specially `Foundation.URL`. Also, strictly speaking, HTTP RFCs mention URIs not URL, but that's just a matter of naming.
 
-#### `HTTP.Request.Method` nested in `HTTP.Request`
+#### `Request.Method` nested inside `Request`
 
-HTTP methods only exist inside HTTP requests, more specifically in the request line. Nesting it inside `HTTP.Request` also helps disambiguating from `Foundation.Method`.
+HTTP methods only exist inside HTTP requests, more specifically in the request line. Nesting it inside `Request` also helps disambiguating from `Foundation.Method`.
 
-#### Lowercase `HTTP.Request.Method` cases
+#### Lowercase `Request.Method` cases
 
 According to Swift's '[API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) enum cases should be lowerCamelCase.
 
@@ -55,9 +55,9 @@ var radarDetector: RadarScanner
 var enjoysScubaDiving = true
 ```
 
-#### `HTTP.Response.Status` nested in `HTTP.Response`
+#### `Response.Status` nested in `Response`
 
-Same reasoning as `HTTP.Request.Method` nested inside `HTTP.Request`. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside `HTTP.Response` also helps disambiguating from other possible `Status` types.
+Same reasoning as `Request.Method` nested inside `Request`. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside `Response` also helps disambiguating from other possible `Status` types.
 
 #### `Deadline` instead of timeouts.
 
