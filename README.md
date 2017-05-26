@@ -50,7 +50,7 @@ var userSMTPServer: SecureSMTPServer
 
 > Other acronyms should be treated as ordinary words:
 
-```
+```swift
 var radarDetector: RadarScanner
 var enjoysScubaDiving = true
 ```
