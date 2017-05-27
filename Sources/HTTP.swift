@@ -14,25 +14,6 @@ public struct Version {
     }
 }
 
-extension Version : Hashable {
-    /// :nodoc:
-    public var hashValue: Int {
-        return major ^ minor
-    }
-    
-    /// :nodoc:
-    public static func == (lhs: Version, rhs: Version) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-}
-
-extension Version : CustomStringConvertible {
-    /// :nodoc:
-    public var description: String {
-        return "HTTP/" + major.description + "." + minor.description
-    }
-}
-
 // MARK: Headers
 
 /// Representation of the HTTP headers.
@@ -56,137 +37,6 @@ public struct Headers {
         public init(_ original: String) {
             self.original = original
         }
-    }
-}
-
-extension Headers : ExpressibleByDictionaryLiteral {
-    /// :nodoc:
-    public init(dictionaryLiteral headers: (Field, String)...) {
-        self.headers = headers
-    }
-}
-
-extension Headers : Sequence {
-    /// :nodoc:
-    public func makeIterator() -> IndexingIterator<Array<(Field, String)>> {
-        return headers.makeIterator()
-    }
-    
-    /// :nodoc:
-    public var count: Int {
-        return headers.count
-    }
-    
-    /// :nodoc:
-    public var isEmpty: Bool {
-        return headers.isEmpty
-    }
-    
-    /// :nodoc:
-    public subscript(field: Field) -> [String] {
-        get {
-            return headers.filter({ $0.0 == field }).map({ $0.1 })
-        }
-        
-        set(headers) {
-            self.headers = self.headers.filter({ $0.0 == field })
-            
-            for header in headers {
-                append(field: field, header: header)
-            }
-        }
-    }
-    
-    /// :nodoc:
-    public subscript(field: String) -> [String] {
-        get {
-            return self[Field(field)]
-        }
-        
-        set(header) {
-            self[Field(field)] = header
-        }
-    }
-    
-    /// Appends a field to the headers.
-    public mutating func append(field: Field, header: String) {
-        headers.append(field, header)
-    }
-}
-
-extension Headers : CustomStringConvertible {
-    /// :nodoc:
-    public var description: String {
-        var string = ""
-        
-        for (header, value) in headers {
-            string += "\(header): \(value)\n"
-        }
-        
-        return string
-    }
-}
-
-extension Headers : Equatable {
-    /// :nodoc:
-    public static func == (lhs: Headers, rhs: Headers) -> Bool {
-        guard lhs.count == rhs.count else {
-            return false
-        }
-        
-        for (lhsHeader, rhsHeader) in zip(lhs, rhs) {
-            if lhsHeader.0 != rhsHeader.0 || lhsHeader.1 != rhsHeader.1 {
-                return false
-            }
-        }
-        
-        return true
-    }
-}
-
-extension Headers.Field : Hashable {
-    /// :nodoc:
-    public var hashValue: Int {
-        return original.hashValue
-    }
-    
-    /// :nodoc:
-    public static func == (lhs: Headers.Field, rhs: Headers.Field) -> Bool {
-        if lhs.original == rhs.original {
-            return true
-        }
-        
-        return lhs.original.caseInsensitiveCompare(rhs.original)
-    }
-}
-
-extension Headers.Field : ExpressibleByStringLiteral {
-    /// :nodoc:
-    public init(stringLiteral string: String) {
-        self.init(string)
-    }
-    
-    /// :nodoc:
-    public init(extendedGraphemeClusterLiteral string: String){
-        self.init(string)
-    }
-    
-    /// :nodoc:
-    public init(unicodeScalarLiteral string: String){
-        self.init(string)
-    }
-}
-
-extension Headers.Field : CustomStringConvertible {
-    /// :nodoc:
-    public var description: String {
-        return original
-    }
-}
-
-extension String {
-    fileprivate func caseInsensitiveCompare(_ other: String) -> Bool {
-        fatalError()
     }
 }
 
@@ -254,7 +104,6 @@ public struct Request : Message {
     public var version: Version
     /// HTTP headers.
     public var headers: Headers
-    
     /// User data storage.
     public var storage: Storage = [:]
     
@@ -264,7 +113,7 @@ public struct Request : Message {
         uri: URI,
         headers: Headers,
         version: Version
-        ) {
+    ) {
         self.method = method
         self.uri = uri
         self.headers = headers
@@ -280,44 +129,6 @@ public struct Request : Message {
         init(_ method: String) {
             self.method = method.uppercased()
         }
-        
-        /// GET method.
-        public static var get = Method("GET")
-        /// HEAD method.
-        public static var head = Method("HEAD")
-        /// POST method.
-        public static var post = Method("POST")
-        /// PUT method.
-        public static var put = Method("PUT")
-        /// PATCH method.
-        public static var patch = Method("PATCH")
-        /// DELETE method.
-        public static var delete = Method("DELETE")
-        /// OPTIONS method.
-        public static var options = Method("OPTIONS")
-        /// TRACE method.
-        public static var trace = Method("TRACE")
-        /// CONNECT method.
-        public static var connect = Method("CONNECT")
-    }
-}
-
-extension Request.Method : Hashable {
-    /// :nodoc:
-    public var hashValue: Int {
-        return method.hashValue
-    }
-    
-    /// :nodoc:
-    public static func == (lhs: Request.Method, rhs: Request.Method) -> Bool {
-        return lhs.description == rhs.description
-    }
-}
-
-extension Request.Method : CustomStringConvertible {
-    /// :nodoc:
-    public var description: String {
-        return method
     }
 }
 
@@ -357,222 +168,10 @@ public struct Response : Message {
             self.statusCode = statusCode
             self.reasonPhrase = reasonPhrase
         }
-        
-        /// Continue.
-        public static var `continue` = Status(statusCode: 100, reasonPhrase: "Continue")
-        /// Switching Protocols.
-        public static var switchingProtocols = Status(statusCode: 101, reasonPhrase: "Switching Protocols")
-        /// Processing.
-        public static var processing = Status(statusCode: 102, reasonPhrase: "Processing")
-        
-        /// OK.
-        public static var ok = Status(statusCode: 200, reasonPhrase: "OK")
-        /// Created.
-        public static var created = Status(statusCode: 201, reasonPhrase: "Created")
-        /// Accepted.
-        public static var accepted = Status(statusCode: 202, reasonPhrase: "Accepted")
-        /// Non Authoritative Information.
-        public static var nonAuthoritativeInformation = Status(statusCode: 203, reasonPhrase: "Non Authoritative Information")
-        /// No Content.
-        public static var noContent = Status(statusCode: 204, reasonPhrase: "No Content")
-        /// Reset Content.
-        public static var resetContent = Status(statusCode: 205, reasonPhrase: "Reset Content")
-        /// Partial Content.
-        public static var partialContent = Status(statusCode: 206, reasonPhrase: "Partial Content")
-        
-        /// Multiple choices.
-        public static var multipleChoices = Status(statusCode: 300, reasonPhrase: "Multiple Choices")
-        /// Moved permanently.
-        public static var movedPermanently = Status(statusCode: 301, reasonPhrase: "Moved Permanently")
-        /// Found.
-        public static var found = Status(statusCode: 302, reasonPhrase: "Found")
-        /// See Other
-        public static var seeOther = Status(statusCode: 303, reasonPhrase: "See Other")
-        /// Not Modified.
-        public static var notModified = Status(statusCode: 304, reasonPhrase: "Not Modified")
-        /// Use Proxy.
-        public static var useProxy = Status(statusCode: 305, reasonPhrase: "Use Proxy")
-        /// Switch Proxy.
-        public static var switchProxy = Status(statusCode: 306, reasonPhrase: "Switch Proxy")
-        /// Temporary Redirect.
-        public static var temporaryRedirect = Status(statusCode: 307, reasonPhrase: "Temporary Redirect")
-        /// Permanent Redirect.
-        public static var permanentRedirect = Status(statusCode: 308, reasonPhrase: "Permanent Redirect")
-        
-        /// Bad Request.
-        public static var badRequest = Status(statusCode: 400, reasonPhrase: "Bad Request")
-        /// Unauthorized.
-        public static var unauthorized = Status(statusCode: 401, reasonPhrase: "Unauthorized")
-        /// Payment Required.
-        public static var paymentRequired = Status(statusCode: 402, reasonPhrase: "Payment Required")
-        /// Forbidden.
-        public static var forbidden = Status(statusCode: 403, reasonPhrase: "Forbidden")
-        /// Not Found.
-        public static var notFound = Status(statusCode: 404, reasonPhrase: "Not Found")
-        /// Method Not Allowed.
-        public static var methodNotAllowed = Status(statusCode: 405, reasonPhrase: "Method Not Allowed")
-        /// Not Acceptable.
-        public static var notAcceptable = Status(statusCode: 406, reasonPhrase: "Not Acceptable")
-        /// Proxy Authentication Required.
-        public static var proxyAuthenticationRequired = Status(statusCode: 407, reasonPhrase: "Proxy Authentication Required")
-        /// Request Timeout.
-        public static var requestTimeout = Status(statusCode: 408, reasonPhrase: "Request Timeout")
-        /// Conflict.
-        public static var conflict = Status(statusCode: 409, reasonPhrase: "Conflict")
-        /// Gone.
-        public static var gone = Status(statusCode: 410, reasonPhrase: "Gone")
-        /// Length Required.
-        public static var lengthRequired = Status(statusCode: 411, reasonPhrase: "Length Required")
-        /// Precodition Failed.
-        public static var preconditionFailed = Status(statusCode: 412, reasonPhrase: "Precondition Failed")
-        /// Request Entity Too Large.
-        public static var requestEntityTooLarge = Status(statusCode: 413, reasonPhrase: "Request Entity Too Large")
-        /// Request URI Too Long.
-        public static var requestURITooLong = Status(statusCode: 414, reasonPhrase: "Request URI Too Long")
-        //// Unsupported Media Type.
-        public static var unsupportedMediaType = Status(statusCode: 415, reasonPhrase: "Unsupported Media Type")
-        /// Request Range Not Satisfiable.
-        public static var requestedRangeNotSatisfiable = Status(statusCode: 416, reasonPhrase: "Request Range Not Satisfiable")
-        /// Expectation Failed.
-        public static var expectationFailed = Status(statusCode: 417, reasonPhrase: "Expectation Failed")
-        /// I'm A Teapot.
-        public static var imATeapot = Status(statusCode: 418, reasonPhrase: "I'm A Teapot")
-        /// Authentication Timeout.
-        public static var authenticationTimeout = Status(statusCode: 419, reasonPhrase: "Authentication Timeout")
-        /// Enhance Your Calm.
-        public static var enhanceYourCalm = Status(statusCode: 420, reasonPhrase: "Enhance Your Calm")
-        /// Unprocessable Entity.
-        public static var unprocessableEntity = Status(statusCode: 422, reasonPhrase: "Unprocessable Entity")
-        /// Locked.
-        public static var locked = Status(statusCode: 423, reasonPhrase: "Locked")
-        /// Failed Dependency.
-        public static var failedDependency = Status(statusCode: 424, reasonPhrase: "Failed Dependency")
-        /// Precondition Required.
-        public static var preconditionRequired = Status(statusCode: 428, reasonPhrase: "Precondition Required")
-        /// Too Many Requests.
-        public static var tooManyRequests = Status(statusCode: 429, reasonPhrase: "Too Many Requests")
-        /// Request Header Fields Too Large.
-        public static var requestHeaderFieldsTooLarge = Status(statusCode: 431, reasonPhrase: "Request Header Fields Too Large")
-        
-        /// Internal Server Error.
-        public static var internalServerError = Status(statusCode: 500, reasonPhrase: "Internal Server Error")
-        /// Not Implemented.
-        public static var notImplemented = Status(statusCode: 501, reasonPhrase: "Not Implemented")
-        /// Bad Gateway.
-        public static var badGateway = Status(statusCode: 502, reasonPhrase: "Bad Gateway")
-        /// Service Unavailable.
-        public static var serviceUnavailable = Status(statusCode: 503, reasonPhrase: "Service Unavailable")
-        /// Gateway Timeout.
-        public static var gatewayTimeout = Status(statusCode: 504, reasonPhrase: "Gateway Timeout")
-        /// HTTP Version Not Supported.
-        public static var httpVersionNotSupported = Status(statusCode: 505, reasonPhrase: "HTTP Version Not Supported")
-        /// Variant Also Negotiates.
-        public static var variantAlsoNegotiates = Status(statusCode: 506, reasonPhrase: "Variant Also Negotiates")
-        /// Insufficient Storage.
-        public static var insufficientStorage = Status(statusCode: 507, reasonPhrase: "Insufficient Storage")
-        /// Loop Detected.
-        public static var loopDetected = Status(statusCode: 508, reasonPhrase: "Loop Detected")
-        /// Not Extended.
-        public static var notExtended = Status(statusCode: 510, reasonPhrase: "Not Extended")
-        /// Network Authentication Required.
-        public static var networkAuthenticationRequired = Status(statusCode: 511, reasonPhrase: "Network Authentication Required")
-    }
-}
-
-extension Response.Status {
-    /// True if the status is informational.
-    public var isInformational: Bool {
-        return (100 ..< 200).contains(statusCode)
-    }
-    
-    /// True if the status is succesfull.
-    public var isSuccessful: Bool {
-        return (200 ..< 300).contains(statusCode)
-    }
-    
-    /// True if the status is redirection.
-    public var isRedirection: Bool {
-        return (300 ..< 400).contains(statusCode)
-    }
-    
-    /// True if the status is an error.
-    public var isError: Bool {
-        return (400 ..< 600).contains(statusCode)
-    }
-    
-    /// True if the status is a client error.
-    public var isClientError: Bool {
-        return (400 ..< 500).contains(statusCode)
-    }
-    
-    /// True if the status is a server error.
-    public var isServerError: Bool {
-        return (500 ..< 600).contains(statusCode)
-    }
-}
-
-extension Response.Status : Hashable {
-    /// :nodoc:
-    public var hashValue: Int {
-        return statusCode
-    }
-    
-    /// :nodoc:
-    public static func == (lhs: Response.Status, rhs: Response.Status) -> Bool {
-        return lhs.hashValue == rhs.hashValue
-    }
-}
-
-extension Response.Status : CustomStringConvertible {
-    /// :nodoc:
-    public var description: String {
-        return statusCode.description + " " + reasonPhrase
     }
 }
 
 // MARK: Time
-
-extension Int {
-    /// `Duration` represented in milliseconds.
-    public var millisecond: Duration {
-        return Duration(self)
-    }
-    
-    /// `Duration` represented in milliseconds.
-    public var milliseconds: Duration {
-        return millisecond
-    }
-    
-    /// `Duration` represented in seconds.
-    public var second: Duration {
-        return Duration(self * 1000)
-    }
-    
-    /// `Duration` represented in seconds.
-    public var seconds: Duration {
-        return second
-    }
-    
-    /// `Duration` represented in minutes.
-    public var minute: Duration {
-        return Duration(self * 1000 * 60)
-    }
-    
-    /// `Duration` represented in minutes.
-    public var minutes: Duration {
-        return minute
-    }
-    
-    /// `Duration` represented in hours.
-    public var hour: Duration {
-        return Duration(self * 1000 * 60 * 60)
-    }
-    
-    /// `Duration` represented in hours.
-    public var hours: Duration {
-        return hour
-    }
-}
 
 /// Representation of a time interval.
 ///
@@ -599,22 +198,16 @@ extension Int {
 /// let twoHours = 2.hours
 /// ```
 public struct Duration {
-    let value: Int64
+    /// Raw value representing the duration.
+    public let value: Double
     
-    fileprivate init(_ duration: Int) {
-        self.value = Int64(duration)
+    init(_ duration: Double) {
+        self.value = duration
     }
     
     /// Creates a `Deadline` from the duration.
     public func fromNow() -> Deadline {
         fatalError()
-    }
-}
-
-extension Duration : Equatable {
-    /// :nodoc:
-    public static func == (lhs: Duration, rhs: Duration) -> Bool {
-        return lhs.value == rhs.value
     }
 }
 
@@ -629,9 +222,9 @@ extension Duration : Equatable {
 /// ```
 public struct Deadline {
     /// Raw value representing the deadline.
-    public let value: Int64
+    public let value: Double
     
-    init(_ deadline: Int64) {
+    init(_ deadline: Double) {
         self.value = deadline
     }
     
@@ -755,14 +348,6 @@ public struct AnyError : Error {
         self.error = error
     }
 }
-
-extension AnyError : CustomStringConvertible {
-    /// :nodoc:
-    public var description: String {
-        return String(describing: error)
-    }
-}
-
 
 // MARK: AsyncReadable
 
