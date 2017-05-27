@@ -28,134 +28,51 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Version.html">Version</a>
+            <a href="HTTP Version.html">HTTP Version</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/Version.html">Version</a>
+                <a href="Structs/HTTPVersion.html">HTTPVersion</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Headers.html">Headers</a>
+            <a href="HTTP Headers.html">HTTP Headers</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/Headers.html">Headers</a>
+                <a href="Structs/HTTPHeaders.html">HTTPHeaders</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/Headers/Field.html">– Field</a>
+                <a href="Structs/HTTPHeaders/Field.html">– Field</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Message.html">Message</a>
+            <a href="HTTP Message.html">HTTP Message</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Protocols/Message.html">Message</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Message.html#/s:4HTTP7Storage">Storage</a>
+                <a href="Protocols/HTTPMessage.html">HTTPMessage</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="URI.html">URI</a>
+            <a href="HTTP Request.html">HTTP Request</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/URI.html">URI</a>
+                <a href="Structs/HTTPRequest.html">HTTPRequest</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/URI/UserInfo.html">– UserInfo</a>
+                <a href="Structs/HTTPMethod.html">HTTPMethod</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Request.html">Request</a>
+            <a href="HTTP Response.html">HTTP Response</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/Request.html">Request</a>
+                <a href="Structs/HTTPResponse.html">HTTPResponse</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/Request/Method.html">– Method</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Response.html">Response</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/Response.html">Response</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/Response/Status.html">– Status</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Time.html">Time</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/Deadline.html">Deadline</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/Duration.html">Duration</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Extensions/Int.html">Int</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Async.html">Async</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Enums/Result.html">Result</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Async.html#/s:4HTTP11AsyncResult">AsyncResult</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="IO.html">IO</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/Readable.html">Readable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/Writable.html">Writable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/AsyncReadable.html">AsyncReadable</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/AsyncWritable.html">AsyncWritable</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Body.html">Body</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Enums/Body.html">Body</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/AsyncBody.html">AsyncBody</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Error Handling.html">Error Handling</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/AnyError.html">AnyError</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Other Extensions.html">Other Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Extensions/Double.html">Double</a>
+                <a href="Structs/HTTPStatus.html">HTTPStatus</a>
               </li>
             </ul>
           </li>
@@ -173,68 +90,167 @@
 <p>For a more convenient overview of the API you can read the <a href="https://paulofaria.github.io/http-api-proposal/">API reference</a>.</p>
 <h2 id='rationale' class='heading'>Rationale</h2>
 
-<p>Below I describe the reasoning behind the API design.</p>
-<h4 id='no-code-http-code-prefix' class='heading'>No <code>HTTP</code> prefix</h4>
+<p>Reasoning behind the API design.</p>
+<h4 id='code-httpversion-code' class='heading'><code>HTTPVersion</code></h4>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPVersion</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">major</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">minor</span><span class="p">:</span> <span class="kt">Int</span>
 
-<p>There&rsquo;s no need to prefix the types with <code>HTTP</code> because they are already defined inside the <code>HTTP</code> module. Their complete names are <code>HTTP.Request</code>, <code>HTTP.Response</code>, etc. Because the module name (<code>HTTP</code>) is so short, disambiguating by adding the <code>HTTP</code> prefix (<code>HTTP.Request</code>) does not make the names prohibitively long and in comparison to <code>HTTPRequest</code> it is only a single character longer. I&rsquo;d even argue that <code>HTTP.Request</code> is more readable than <code>HTTPRequest</code>.</p>
-<h4 id='code-version-code-as-a-struct' class='heading'><code>Version</code> as a struct</h4>
-
-<p>Having <code>Version</code> as a <code>struct</code> allows it to adopt protocols, being the most useful <a href="https://github.com/paulofaria/http-proposal/blob/master/Sources/HTTP.swift#L31">CustomStringConvertible</a> when serializing the HTTP message.</p>
-<h4 id='code-headers-code-single-storage-implementation-detail' class='heading'><code>Headers</code> single storage [Implementation Detail]</h4>
-
-<p>Having a single storage for <code>Headers</code> should provide better performance. We delegate case insensitive matching to the implementation of <code>Headers.Field</code>&lsquo;s <code>Equatable</code> conformance.</p>
-<h4 id='add-code-storage-code-to-code-message-code-protocol' class='heading'>Add <code>Storage</code> to <code>Message</code> protocol</h4>
-
-<p>This is <em>very</em> important for extensiblity as it allows API users to store data in <code>Message</code> extensions. The most common use case for this would be adding contextual data inside HTTP middleware.</p>
-<h4 id='code-uri-code' class='heading'><code>URI</code></h4>
-
-<p><code>Foundation.URL</code> and <code>Foundation.URLComponents</code> are quite slow on parsing and initialization. I imagine this is because of all of the other functionality bundled in the aforementioned types, specially <code>Foundation.URL</code>. Also, strictly speaking, HTTP RFCs mention URIs not URL, but that&rsquo;s just a matter of naming.</p>
-<h4 id='code-request-method-code-nested-inside-code-request-code' class='heading'><code>Request.Method</code> nested inside <code>Request</code></h4>
-
-<p>HTTP methods only exist inside HTTP requests, more specifically in the request line. Nesting it inside <code>Request</code> also helps disambiguating from <code>Foundation.Method</code>.</p>
-<h4 id='lowercase-code-request-method-code-cases' class='heading'>Lowercase <code>Request.Method</code> cases</h4>
-
-<p>According to Swift&rsquo;s &rsquo;<a href="https://swift.org/documentation/api-design-guidelines/">API Design Guidelines</a> enum cases should be lowerCamelCase.</p>
-
-<blockquote>
-<p>Follow case conventions. Names of types and protocols are UpperCamelCase. Everything else is lowerCamelCase.</p>
-
-<p>Acronyms and initialisms that commonly appear as all upper case in American English should be uniformly up- or down-cased according to case conventions:</p>
-</blockquote>
-<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">utf8Bytes</span><span class="p">:</span> <span class="p">[</span><span class="kt">UTF8</span><span class="o">.</span><span class="kt">CodeUnit</span><span class="p">]</span>
-<span class="k">var</span> <span class="nv">isRepresentableAsASCII</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="k">var</span> <span class="nv">userSMTPServer</span><span class="p">:</span> <span class="kt">SecureSMTPServer</span>
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">major</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">minor</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">major</span> <span class="o">=</span> <span class="n">major</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">minor</span> <span class="o">=</span> <span class="n">minor</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 
-<blockquote>
-<p>Other acronyms should be treated as ordinary words:</p>
-</blockquote>
-<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">radarDetector</span><span class="p">:</span> <span class="kt">RadarScanner</span>
-<span class="k">var</span> <span class="nv">enjoysScubaDiving</span> <span class="o">=</span> <span class="kc">true</span>
+<p><code>HTTPVersion</code> is a <code>struct</code> because it allows it to adopt <code>Hashable</code>, <code>Equatable</code> and <code>CustomStringConvertible</code> or any other protocol defined in an extension, if needed.</p>
+<h4 id='code-httpheaders-code' class='heading'><code>HTTPHeaders</code></h4>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPHeaders</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[(</span><span class="kt">Field</span><span class="p">,</span> <span class="kt">String</span><span class="p">)]</span>
+
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[(</span><span class="kt">Field</span><span class="p">,</span> <span class="kt">String</span><span class="p">)])</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Field</span> <span class="p">{</span>
+        <span class="kd">public</span> <span class="k">let</span> <span class="nv">original</span><span class="p">:</span> <span class="kt">String</span>
+
+        <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">original</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">original</span> <span class="o">=</span> <span class="n">original</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
-<h4 id='code-response-status-code-nested-in-code-response-code' class='heading'><code>Response.Status</code> nested in <code>Response</code></h4>
 
-<p>Same reasoning as <code>Request.Method</code> nested inside <code>Request</code>. HTTP status only exist inside HTTP responses, more specifically in the response line. Nesting it inside <code>Response</code> also helps disambiguating from other possible <code>Status</code> types.</p>
-<h4 id='code-deadline-code-instead-of-timeouts' class='heading'><code>Deadline</code> instead of timeouts.</h4>
+<p><code>HTTPHeaders</code> is a <code>struct</code>  because it allows it to adopt <code>Hashable</code>, <code>Equatable</code> and <code>CustomStringConvertible</code> or any other protocol defined in an extension, if needed. Its backing storage is an array of tuples, but <code>HTTPHeaders</code> has a subcript function which allows one to access the headers as if it was <code>[String: [String]]</code>. The <code>Field</code> type&rsquo;s <code>Equatable</code> implementation does case insensitive comparison. This allows us to have a single storage and only do case insensitive checking when necessary, thus improving performance.</p>
+<h4 id='code-httpmessage-code' class='heading'><code>HTTPMessage</code></h4>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">HTTPMessage</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">HTTPVersion</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">headers</span><span class="p">:</span> <span class="kt">HTTPHeaders</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>Deadlines are easier to deal with. There&rsquo;s no need for intermediate calculations when providing the value for separate calls.</p>
-<h4 id='use-code-async-code-as-a-prefix-for-assynchronous-based-types' class='heading'>Use <code>Async</code> as a prefix for assynchronous based types.</h4>
+<p>The <code>HTTPMessage</code> represents HTTP messages (HTTP request and HTTP response). Its goal is to allow extensions with properties and functions which are common to both <code>HTTPRequest</code> and <code>HTTPResponse</code>. A simple example would be:</p>
+<pre class="highlight plaintext"><code>public var contentLength: Int? {
+    get {
+        return headers["Content-Length"].flatMap({ Int($0) })
+    }
 
-<p>Most common APIs are synchronous. Asynchronous APIs are the exception in general. Prefixing all synchronous APIs with <code>Sync</code> would be impractical.</p>
-<h4 id='use-code-unsafemutablerawbufferpointer-code-and-code-unsaferawbufferpointer-code-instead-of-code-foundation-data-code' class='heading'>Use <code>UnsafeMutableRawBufferPointer</code> and <code>UnsafeRawBufferPointer</code> instead of <code>Foundation.Data</code></h4>
+    set(contentLength) {
+        headers["Content-Length"] = contentLength?.description
+    }
+}
+</code></pre>
 
-<p>Using buffer pointers is more performant and depends solely on the standard library. Buffer pointers are also better suited for C APIs interfacing. The current proposal doesn&rsquo;t depend on <code>Foundation</code> at all, but it&rsquo;s possible to provide extensions for the APIs that take buffer pointers converting to and from <code>Foundation.Data</code>.</p>
-<h4 id='use-code-result-lt-value-error-gt-code-for-asynchronous-apis' class='heading'>Use <code>Result&lt;Value, Error&gt;</code> for asynchronous APIs.</h4>
+<p>Usage would be:</p>
+<pre class="highlight plaintext"><code>let requestContentLenght = request.contentLength
+let responseContentLenght = response.contentLength
+</code></pre>
+<h4 id='httpmethod' class='heading'>HTTPMethod</h4>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPMethod</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="k">let</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">String</span>
 
-<p><code>Result</code> is a quite known type and it&rsquo;s used extensively by other async frameworks.</p>
-<h4 id='code-body-code-code-asyncbody-code-cases-code-readable-code-code-writable-code' class='heading'><code>Body</code>/<code>AsyncBody</code> cases <code>readable</code>/<code>writable</code></h4>
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="nf">uppercased</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>Depending on where the body is created and used, it might assume different forms. On the server-side when parsing an HTTP request, the parser can produce a <code>Readable</code> body which will be consumed by a responder (element that responds to an HTTP request with an HTTP response). On the other hand, the responder might use a writable body by providing a <code>Body.Write</code> callback. The HTTP serializer when serializing will pass a <code>Writable</code> to the callback, which will then effectively write the response body. Writable bodies are nice because they allow application to use less memory and be more performant in some use cases. When encoding data you can encode chunks and send then incrementally instead of having to hold all of the data in memory and then create a readable body to be consumed by the serializer.</p>
+<p><code>HTTPMethod</code> is a <code>struct</code> because by definition HTTP methods are open. This means that you can have custom HTTP methods, so an <code>enum</code> would not represent the type correctly. Here&rsquo;s an example of how to create your own <code>HTTPMethod</code> if the static ones provided by default don&rsquo;t fit your needs.</p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">HTTPMethod</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">batch</span> <span class="o">=</span> <span class="kt">HTTPMethod</span><span class="p">(</span><span class="s">"BATCH"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Besides, the implementation provides pattern matching allowing <code>HTTPMethod</code> to be used in a <code>switch</code> case.</p>
+<pre class="highlight swift"><code><span class="k">switch</span> <span class="n">method</span> <span class="p">{</span>
+<span class="k">case</span> <span class="kt">HTTPMethod</span><span class="o">.</span><span class="nv">get</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">case</span> <span class="kt">HTTPMethod</span><span class="o">.</span><span class="nv">post</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">default</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='code-httprequest-code' class='heading'><code>HTTPRequest</code></h4>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPRequest</span> <span class="p">:</span> <span class="kt">HTTPMessage</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">HTTPMethod</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">uri</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">HTTPVersion</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">headers</span><span class="p">:</span> <span class="kt">HTTPHeaders</span>
+
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+        <span class="nv">method</span><span class="p">:</span> <span class="kt">HTTPMethod</span><span class="p">,</span>
+        <span class="nv">uri</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="nv">headers</span><span class="p">:</span> <span class="kt">HTTPHeaders</span><span class="p">,</span>
+        <span class="nv">version</span><span class="p">:</span> <span class="kt">HTTPVersion</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">uri</span> <span class="o">=</span> <span class="n">uri</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><code>HTTPRequest</code> represents an HTTP request.</p>
+<h4 id='code-httpstatus-code' class='heading'><code>HTTPStatus</code></h4>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPStatus</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="k">let</span> <span class="nv">statusCode</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="kd">public</span> <span class="k">let</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">statusCode</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">statusCode</span> <span class="o">=</span> <span class="n">statusCode</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">reasonPhrase</span> <span class="o">=</span> <span class="n">reasonPhrase</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><code>HTTPStatus</code> is a <code>struct</code> because by definition HTTP statuses are open. This means that you can have custom HTTP statuses, so an <code>enum</code> would not represent the type correctly. It&rsquo;s important to notice that the reason phrase is purely informational, meaning you can have different reason phrases for existing status codes. Here&rsquo;s an example of how to create your own <code>HTTPStatus</code> with a custom reason phrase.</p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">HTTPStatus</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">var</span> <span class="err">`</span><span class="n">youShallNotPass</span><span class="err">`</span> <span class="o">=</span> <span class="kt">HTTPStatus</span><span class="p">(</span>
+        <span class="nv">statusCode</span><span class="p">:</span> <span class="mi">401</span><span class="p">,</span>
+        <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"You Shall Not Pass"</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Besides, the implementation provides pattern matching allowing <code>HTTPStatus</code> to be used in a <code>switch</code> case.</p>
+<pre class="highlight swift"><code><span class="k">switch</span> <span class="n">status</span> <span class="p">{</span>
+<span class="k">case</span> <span class="kt">HTTPStatus</span><span class="o">.</span><span class="nv">ok</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">case</span> <span class="kt">HTTPStatus</span><span class="o">.</span><span class="nv">clientErrorRange</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">case</span> <span class="mi">300</span> <span class="o">..&lt;</span> <span class="mi">400</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">default</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</code></pre>
+<h4 id='code-httpresponse-code' class='heading'><code>HTTPResponse</code></h4>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPResponse</span> <span class="p">:</span> <span class="kt">HTTPMessage</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">HTTPStatus</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">headers</span><span class="p">:</span> <span class="kt">HTTPHeaders</span>
+    <span class="kd">public</span> <span class="k">var</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">HTTPVersion</span>
+
+    <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+        <span class="nv">status</span><span class="p">:</span> <span class="kt">HTTPStatus</span><span class="p">,</span>
+        <span class="nv">headers</span><span class="p">:</span> <span class="kt">HTTPHeaders</span><span class="p">,</span>
+        <span class="nv">version</span><span class="p">:</span> <span class="kt">HTTPVersion</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><code>HTTPRequest</code> represents an HTTP response.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://swift.org/server-apis/" target="_blank" rel="external">Zewo</a>. All rights reserved. (Last updated: 2017-05-26)</p>
+          <p>&copy; 2017 <a class="link" href="https://swift.org/server-apis/" target="_blank" rel="external">Swift Server APIs</a>. All rights reserved. (Last updated: 2017-05-27)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

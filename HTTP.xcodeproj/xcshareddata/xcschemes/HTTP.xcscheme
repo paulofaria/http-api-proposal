@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_13"
+               BlueprintIdentifier = "OBJ_22"
                BuildableName = "HTTP.framework"
                BlueprintName = "HTTP"
                ReferencedContainer = "container:HTTP.xcodeproj">
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "OBJ_35"
+               BuildableName = "HTTPTests.xctest"
+               BlueprintName = "HTTPTests"
+               ReferencedContainer = "container:HTTP.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <AdditionalOptions>
       </AdditionalOptions>
@@ -45,7 +55,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_13"
+            BlueprintIdentifier = "OBJ_22"
             BuildableName = "HTTP.framework"
             BlueprintName = "HTTP"
             ReferencedContainer = "container:HTTP.xcodeproj">

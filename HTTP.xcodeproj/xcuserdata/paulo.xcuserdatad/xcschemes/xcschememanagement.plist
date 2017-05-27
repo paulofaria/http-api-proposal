@@ -19,6 +19,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>OBJ_35</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

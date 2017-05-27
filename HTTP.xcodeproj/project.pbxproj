@@ -7,33 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A4ABF801ED8FF6D00F7DC8E /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4ABF7F1ED8FF6D00F7DC8E /* Details.swift */; };
-		OBJ_18 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* HTTP.swift */; };
+		OBJ_27 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* HTTPHeaders.swift */; };
+		OBJ_28 /* HTTPMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* HTTPMessage.swift */; };
+		OBJ_29 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* HTTPMethod.swift */; };
+		OBJ_30 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* HTTPRequest.swift */; };
+		OBJ_31 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* HTTPResponse.swift */; };
+		OBJ_32 /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* HTTPStatus.swift */; };
+		OBJ_33 /* HTTPVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* HTTPVersion.swift */; };
+		OBJ_40 /* HTTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* HTTPTests.swift */; };
+		OBJ_42 /* HTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* HTTP.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3A4ABF8D1ED9A23D00F7DC8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_22;
+			remoteInfo = HTTP;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		3A4ABF7F1ED8FF6D00F7DC8E /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
-		OBJ_10 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = SOURCE_ROOT; };
-		OBJ_12 /* HTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		OBJ_11 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		OBJ_12 /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
+		OBJ_13 /* HTTPStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
+		OBJ_14 /* HTTPVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPVersion.swift; sourceTree = "<group>"; };
+		OBJ_17 /* HTTPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTests.swift; sourceTree = "<group>"; };
+		OBJ_18 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = SOURCE_ROOT; };
+		OBJ_20 /* HTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_21 /* HTTPTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = HTTPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_8 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		OBJ_8 /* HTTPHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
+		OBJ_9 /* HTTPMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_19 /* Frameworks */ = {
+		OBJ_34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		OBJ_41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_42 /* HTTP.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_11 /* Products */ = {
+		OBJ_15 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_12 /* HTTP.framework */,
+				OBJ_16 /* HTTPTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_16 /* HTTPTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_17 /* HTTPTests.swift */,
+			);
+			name = HTTPTests;
+			path = Tests/HTTPTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_20 /* HTTP.framework */,
+				OBJ_21 /* HTTPTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -43,9 +93,9 @@
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_9 /* Tests */,
-				OBJ_10 /* docs */,
-				OBJ_11 /* Products */,
+				OBJ_15 /* Tests */,
+				OBJ_18 /* docs */,
+				OBJ_19 /* Products */,
 			);
 			name = "";
 			sourceTree = "<group>";
@@ -53,28 +103,26 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* HTTP.swift */,
-				3A4ABF7F1ED8FF6D00F7DC8E /* Details.swift */,
+				OBJ_8 /* HTTPHeaders.swift */,
+				OBJ_9 /* HTTPMessage.swift */,
+				OBJ_10 /* HTTPMethod.swift */,
+				OBJ_11 /* HTTPRequest.swift */,
+				OBJ_12 /* HTTPResponse.swift */,
+				OBJ_13 /* HTTPStatus.swift */,
+				OBJ_14 /* HTTPVersion.swift */,
 			);
 			path = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_9 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		OBJ_13 /* HTTP */ = {
+		OBJ_22 /* HTTP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_14 /* Build configuration list for PBXNativeTarget "HTTP" */;
+			buildConfigurationList = OBJ_23 /* Build configuration list for PBXNativeTarget "HTTP" */;
 			buildPhases = (
-				OBJ_17 /* Sources */,
-				OBJ_19 /* Frameworks */,
+				OBJ_26 /* Sources */,
+				OBJ_34 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -82,8 +130,25 @@
 			);
 			name = HTTP;
 			productName = HTTP;
-			productReference = OBJ_12 /* HTTP.framework */;
+			productReference = OBJ_20 /* HTTP.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		OBJ_35 /* HTTPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_36 /* Build configuration list for PBXNativeTarget "HTTPTests" */;
+			buildPhases = (
+				OBJ_39 /* Sources */,
+				OBJ_41 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_43 /* PBXTargetDependency */,
+			);
+			name = HTTPTests;
+			productName = HTTPTests;
+			productReference = OBJ_21 /* HTTPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,29 +166,51 @@
 				en,
 			);
 			mainGroup = OBJ_5 /*  */;
-			productRefGroup = OBJ_11 /* Products */;
+			productRefGroup = OBJ_19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				OBJ_13 /* HTTP */,
+				OBJ_22 /* HTTP */,
+				OBJ_35 /* HTTPTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_17 /* Sources */ = {
+		OBJ_26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				3A4ABF801ED8FF6D00F7DC8E /* Details.swift in Sources */,
-				OBJ_18 /* HTTP.swift in Sources */,
+				OBJ_27 /* HTTPHeaders.swift in Sources */,
+				OBJ_28 /* HTTPMessage.swift in Sources */,
+				OBJ_29 /* HTTPMethod.swift in Sources */,
+				OBJ_30 /* HTTPRequest.swift in Sources */,
+				OBJ_31 /* HTTPResponse.swift in Sources */,
+				OBJ_32 /* HTTPStatus.swift in Sources */,
+				OBJ_33 /* HTTPVersion.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_40 /* HTTPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		OBJ_43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_22 /* HTTP */;
+			targetProxy = 3A4ABF8D1ED9A23D00F7DC8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		OBJ_15 /* Debug */ = {
+		OBJ_24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -144,7 +231,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_16 /* Release */ = {
+		OBJ_25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -188,6 +275,40 @@
 			};
 			name = Debug;
 		};
+		OBJ_37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = HTTP.xcodeproj/HTTPTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = HTTPTests;
+			};
+			name = Debug;
+		};
+		OBJ_38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = HTTP.xcodeproj/HTTPTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = HTTPTests;
+			};
+			name = Release;
+		};
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -212,20 +333,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_14 /* Build configuration list for PBXNativeTarget "HTTP" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_15 /* Debug */,
-				OBJ_16 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		OBJ_2 /* Build configuration list for PBXProject "HTTP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
 				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_23 /* Build configuration list for PBXNativeTarget "HTTP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_24 /* Debug */,
+				OBJ_25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_36 /* Build configuration list for PBXNativeTarget "HTTPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_37 /* Debug */,
+				OBJ_38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
