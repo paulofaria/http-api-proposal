@@ -16,10 +16,6 @@ custom_categories:
   - name: HTTP Headers
     children:
     - HTTPHeaders
-
-  - name: HTTP Message
-    children:
-    - HTTPMessage
     
   - name: HTTP Request
     children:

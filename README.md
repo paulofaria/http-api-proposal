@@ -69,27 +69,6 @@ public protocol HTTPMessage {
 }
 ```
 
-The `HTTPMessage` represents HTTP messages (HTTP request and HTTP response). Its goal is to allow extensions with properties and functions which are common to both `HTTPRequest` and `HTTPResponse`. A simple example would be:
-
-```swift
-public var contentLength: Int? {
-    get {
-        return headers["Content-Length"].flatMap({ Int($0) })
-    }
-    
-    set(contentLength) {
-        headers["Content-Length"] = contentLength?.description
-    }
-}
-```
-
-Usage would be:
-
-```
-let contentLenght = request.contentLength
-let contentLenght = response.contentLength
-````
-
 #### HTTPMethod
 
 ```swift

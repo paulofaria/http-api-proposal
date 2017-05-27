@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		OBJ_27 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* HTTPHeaders.swift */; };
-		OBJ_28 /* HTTPMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* HTTPMessage.swift */; };
 		OBJ_29 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* HTTPMethod.swift */; };
 		OBJ_30 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* HTTPRequest.swift */; };
 		OBJ_31 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* HTTPResponse.swift */; };
@@ -40,7 +39,6 @@
 		OBJ_21 /* HTTPTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = HTTPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_8 /* HTTPHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
-		OBJ_9 /* HTTPMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_8 /* HTTPHeaders.swift */,
-				OBJ_9 /* HTTPMessage.swift */,
 				OBJ_10 /* HTTPMethod.swift */,
 				OBJ_11 /* HTTPRequest.swift */,
 				OBJ_12 /* HTTPResponse.swift */,
@@ -182,7 +179,6 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_27 /* HTTPHeaders.swift in Sources */,
-				OBJ_28 /* HTTPMessage.swift in Sources */,
 				OBJ_29 /* HTTPMethod.swift in Sources */,
 				OBJ_30 /* HTTPRequest.swift in Sources */,
 				OBJ_31 /* HTTPResponse.swift in Sources */,

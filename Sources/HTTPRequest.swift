@@ -1,5 +1,5 @@
 /// HTTP request headers without the body.
-public struct HTTPRequest : HTTPMessage {
+public struct HTTPRequest {
     /// HTTP request method.
     public var method: HTTPMethod
     /// URI.

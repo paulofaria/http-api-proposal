@@ -1,5 +1,5 @@
 /// HTTP response head.
-public struct HTTPResponse : HTTPMessage {
+public struct HTTPResponse {
     /// HTTP response status.
     public var status: HTTPStatus
     /// HTTP headers.
