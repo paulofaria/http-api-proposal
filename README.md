@@ -60,15 +60,6 @@ let host = headers["host"] // ["apple.com"]
 let host = headers["HOST"] // ["apple.com"]
 ````
 
-#### `HTTPMessage`
-
-```swift
-public protocol HTTPMessage {
-    var version: HTTPVersion { get set }
-    var headers: HTTPHeaders { get set }
-}
-```
-
 #### HTTPMethod
 
 ```swift
