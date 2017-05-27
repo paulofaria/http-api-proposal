@@ -37,10 +37,10 @@ public struct HTTPHeaders {
     }
     
     public struct Field {
-        public let original: String
+        public let field: String
         
-        public init(_ original: String) {
-            self.original = original
+        public init(_ field: String) {
+            self.field = field
         }
     }
 }
@@ -178,4 +178,4 @@ public struct HTTPResponse : HTTPMessage {
 }
 ```
 
-`HTTPRequest` represents an HTTP response.
+`HTTPResponse` represents an HTTP response.

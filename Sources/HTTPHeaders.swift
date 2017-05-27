@@ -12,12 +12,12 @@ public struct HTTPHeaders {
     /// This type is used as the key for HTTP headers.
     /// Its implementation of `Equatable` performs a case-insensitive comparison.
     public struct Field {
-        /// Original header field
-        public let original: String
+        /// Header field
+        public let field: String
         
         /// :nodoc:
-        public init(_ original: String) {
-            self.original = original
+        public init(_ field: String) {
+            self.field = field
         }
     }
 }
@@ -121,25 +121,25 @@ public func ~= (pattern: HTTPHeaders, value: HTTPHeaders) -> Bool {
 extension HTTPHeaders.Field : CustomStringConvertible {
     /// :nodoc:
     public var description: String {
-        return original
+        return field
     }
 }
 
 extension HTTPHeaders.Field : Hashable {
     /// :nodoc:
     public var hashValue: Int {
-        return original.hashValue
+        return field.hashValue
     }
 }
 
 extension HTTPHeaders.Field : Equatable {
     /// :nodoc:
     public static func == (lhs: HTTPHeaders.Field, rhs: HTTPHeaders.Field) -> Bool {
-        if lhs.original == rhs.original {
+        if lhs.field == rhs.field {
             return true
         }
         
-        return lhs.original.caseInsensitiveCompare(rhs.original)
+        return lhs.field.caseInsensitiveCompare(rhs.field)
     }
 }
 
