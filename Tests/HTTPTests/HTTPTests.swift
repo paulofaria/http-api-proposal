@@ -2,6 +2,18 @@ import XCTest
 import HTTP
 
 public class HTTPTests: XCTestCase {
+    func testHeaders() throws {
+        let headers: HTTPHeaders = [
+            "Host": "apple.com",
+            "Content-Length": "42",
+            "Content-Type": "application/json"
+        ]
+        
+        XCTAssertEqual(headers["Host"], ["apple.com"])
+        XCTAssertEqual(headers["host"], ["apple.com"])
+        XCTAssertEqual(headers["HOST"], ["apple.com"])
+    }
+    
     func testHTTPMethodPatternMatching() throws {
         let method: HTTPMethod = .get
         

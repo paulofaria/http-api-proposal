@@ -48,6 +48,18 @@ public struct HTTPHeaders {
 
 `HTTPHeaders` is a `struct`  because it allows it to adopt `Hashable`, `Equatable` and `CustomStringConvertible` or any other protocol defined in an extension, if needed. Its backing storage is an array of tuples, but `HTTPHeaders` has a subcript function which allows one to access the headers as if it was `[String: [String]]`. The `Field` type's `Equatable` implementation does case insensitive comparison. This allows us to have a single storage and only do case insensitive checking when necessary, thus improving performance.
 
+```swift
+let headers: HTTPHeaders = [
+    "Host": "apple.com",
+    "Content-Length": "42",
+    "Content-Type": "application/json"
+]
+
+let host = headers["Host"] // ["apple.com"]
+let host = headers["host"] // ["apple.com"]
+let host = headers["HOST"] // ["apple.com"]
+````
+
 #### `HTTPMessage`
 
 ```swift
@@ -59,7 +71,7 @@ public protocol HTTPMessage {
 
 The `HTTPMessage` represents HTTP messages (HTTP request and HTTP response). Its goal is to allow extensions with properties and functions which are common to both `HTTPRequest` and `HTTPResponse`. A simple example would be:
 
-```
+```swift
 public var contentLength: Int? {
     get {
         return headers["Content-Length"].flatMap({ Int($0) })
@@ -74,8 +86,8 @@ public var contentLength: Int? {
 Usage would be:
 
 ```
-let requestContentLenght = request.contentLength
-let responseContentLenght = response.contentLength
+let contentLenght = request.contentLength
+let contentLenght = response.contentLength
 ````
 
 #### HTTPMethod
@@ -154,7 +166,7 @@ public struct HTTPStatus {
 
 ```swift
 extension HTTPStatus {
-    public static var `youShallNotPass` = HTTPStatus(
+    public static var youShallNotPass = HTTPStatus(
         statusCode: 401,
         reasonPhrase: "You Shall Not Pass"
     )

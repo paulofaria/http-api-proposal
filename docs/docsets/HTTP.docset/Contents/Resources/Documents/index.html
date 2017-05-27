@@ -123,6 +123,16 @@
 </code></pre>
 
 <p><code>HTTPHeaders</code> is a <code>struct</code>  because it allows it to adopt <code>Hashable</code>, <code>Equatable</code> and <code>CustomStringConvertible</code> or any other protocol defined in an extension, if needed. Its backing storage is an array of tuples, but <code>HTTPHeaders</code> has a subcript function which allows one to access the headers as if it was <code>[String: [String]]</code>. The <code>Field</code> type&rsquo;s <code>Equatable</code> implementation does case insensitive comparison. This allows us to have a single storage and only do case insensitive checking when necessary, thus improving performance.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">headers</span><span class="p">:</span> <span class="kt">HTTPHeaders</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">"Host"</span><span class="p">:</span> <span class="s">"apple.com"</span><span class="p">,</span>
+    <span class="s">"Content-Length"</span><span class="p">:</span> <span class="s">"42"</span><span class="p">,</span>
+    <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span>
+<span class="p">]</span>
+
+<span class="k">let</span> <span class="nv">host</span> <span class="o">=</span> <span class="n">headers</span><span class="p">[</span><span class="s">"Host"</span><span class="p">]</span> <span class="c1">// ["apple.com"]</span>
+<span class="k">let</span> <span class="nv">host</span> <span class="o">=</span> <span class="n">headers</span><span class="p">[</span><span class="s">"host"</span><span class="p">]</span> <span class="c1">// ["apple.com"]</span>
+<span class="k">let</span> <span class="nv">host</span> <span class="o">=</span> <span class="n">headers</span><span class="p">[</span><span class="s">"HOST"</span><span class="p">]</span> <span class="c1">// ["apple.com"]</span>
+</code></pre>
 <h4 id='code-httpmessage-code' class='heading'><code>HTTPMessage</code></h4>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">HTTPMessage</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">HTTPVersion</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span>
@@ -131,20 +141,20 @@
 </code></pre>
 
 <p>The <code>HTTPMessage</code> represents HTTP messages (HTTP request and HTTP response). Its goal is to allow extensions with properties and functions which are common to both <code>HTTPRequest</code> and <code>HTTPResponse</code>. A simple example would be:</p>
-<pre class="highlight plaintext"><code>public var contentLength: Int? {
-    get {
-        return headers["Content-Length"].flatMap({ Int($0) })
-    }
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">contentLength</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="p">{</span>
+    <span class="k">get</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">headers</span><span class="p">[</span><span class="s">"Content-Length"</span><span class="p">]</span><span class="o">.</span><span class="nf">flatMap</span><span class="p">({</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">})</span>
+    <span class="p">}</span>
 
-    set(contentLength) {
-        headers["Content-Length"] = contentLength?.description
-    }
-}
+    <span class="nf">set</span><span class="p">(</span><span class="n">contentLength</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">headers</span><span class="p">[</span><span class="s">"Content-Length"</span><span class="p">]</span> <span class="o">=</span> <span class="n">contentLength</span><span class="p">?</span><span class="o">.</span><span class="n">description</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 
 <p>Usage would be:</p>
-<pre class="highlight plaintext"><code>let requestContentLenght = request.contentLength
-let responseContentLenght = response.contentLength
+<pre class="highlight plaintext"><code>let contentLenght = request.contentLength
+let contentLenght = response.contentLength
 </code></pre>
 <h4 id='httpmethod' class='heading'>HTTPMethod</h4>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPMethod</span> <span class="p">{</span>
@@ -208,7 +218,7 @@ let responseContentLenght = response.contentLength
 
 <p><code>HTTPStatus</code> is a <code>struct</code> because by definition HTTP statuses are open. This means that you can have custom HTTP statuses, so an <code>enum</code> would not represent the type correctly. It&rsquo;s important to notice that the reason phrase is purely informational, meaning you can have different reason phrases for existing status codes. Here&rsquo;s an example of how to create your own <code>HTTPStatus</code> with a custom reason phrase.</p>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">HTTPStatus</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">var</span> <span class="err">`</span><span class="n">youShallNotPass</span><span class="err">`</span> <span class="o">=</span> <span class="kt">HTTPStatus</span><span class="p">(</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">youShallNotPass</span> <span class="o">=</span> <span class="kt">HTTPStatus</span><span class="p">(</span>
         <span class="nv">statusCode</span><span class="p">:</span> <span class="mi">401</span><span class="p">,</span>
         <span class="nv">reasonPhrase</span><span class="p">:</span> <span class="s">"You Shall Not Pass"</span>
     <span class="p">)</span>
