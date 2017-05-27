@@ -54,8 +54,8 @@ extension HTTPHeaders : Sequence {
         set(headers) {
             self.headers = self.headers.filter({ $0.0 == field })
             
-            for header in headers {
-                append(field: field, header: header)
+            for value in headers {
+                append(field: field, value: value)
             }
         }
     }
@@ -72,8 +72,13 @@ extension HTTPHeaders : Sequence {
     }
     
     /// Appends a field to the headers.
-    public mutating func append(field: Field, header: String) {
-        headers.append(field, header)
+    public mutating func append(field: Field, value: String) {
+        headers.append(field, value)
+    }
+    
+    /// Appends a field to the headers.
+    public mutating func append(field: String, value: String) {
+        headers.append(Field(field), value)
     }
 }
 
